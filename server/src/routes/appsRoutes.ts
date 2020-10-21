@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import appsController from '../controllers/appController';
 
 class AppsRoutes {
     public router: Router = Router();
@@ -8,7 +9,7 @@ class AppsRoutes {
     }
     //Usa la propiedad router, definiendo ruta inicial
     config(): void{
-        this.router.get('/', (req,res) => res.send('APP'));
+        this.router.get('/', appsController.index);
     }
 }
 
