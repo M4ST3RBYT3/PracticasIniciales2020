@@ -12,7 +12,11 @@ class AppsRoutes {
     }
     //Usa la propiedad router, definiendo ruta inicial
     config() {
-        this.router.get('/', appController_1.default.index);
+        this.router.get('/', appController_1.default.list);
+        this.router.get('/:id', appController_1.default.getOne);
+        this.router.post('/', appController_1.default.create);
+        this.router.delete('/:id', appController_1.default.delete);
+        this.router.put('/:id', appController_1.default.update);
     }
 }
 const appsRoutes = new AppsRoutes();

@@ -9,7 +9,12 @@ class AppsRoutes {
     }
     //Usa la propiedad router, definiendo ruta inicial
     config(): void{
-        this.router.get('/', appsController.index);
+        this.router.get('/', appsController.list);
+        this.router.get('/:id', appsController.getOne);
+        this.router.post('/', appsController.create);
+        this.router.delete('/:id', appsController.delete);
+        this.router.put('/:id', appsController.update);
+        
     }
 }
 
