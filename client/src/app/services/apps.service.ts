@@ -1,9 +1,35 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { App } from '../models/App';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppsService {
 
-  constructor() { }
+  API_URI = 'http://localhost:3000/api';
+
+  constructor(private http: HttpClient) { }
+
+  getUsuarios(){
+    return this.http.get('${this.API_URI}/apps');
+  }
+
+  getUsuario(id: string){
+    return this.http.get('${this.API_URI/apps/${id}');
+  }
+
+  deleteUsuario(id: string ){
+    return this.http.delete('${this.API_URI/apps/${id}');
+  }
+  
+  saveUsuario(usuario: App){
+    return this.http.post('${this.API_URI}/apps', usuario);
+  }
+
+  updateUsuario(id, updatedUsuario): Observable<App>{
+    return this.http.put('${this.API_URI}/apps/${id}', updatedUsuario);
+  }
 }

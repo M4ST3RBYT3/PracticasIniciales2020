@@ -1,24 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
 import { AppFormComponent } from './components/app-form/app-form.component';
 import { AppListComponent } from './components/app-list/app-list.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+
+import {AppsService} from './services/apps.service';
+//import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //NavigationComponent,
     AppFormComponent,
-    AppListComponent
+    AppListComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AppsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
