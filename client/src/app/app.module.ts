@@ -1,0 +1,34 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AppFormComponent } from './components/app-form/app-form.component';
+import { AppListComponent } from './components/app-list/app-list.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+
+import {AppsService} from './services/apps.service';
+import { PublicacionComponent } from './components/publicacion/publicacion.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AppFormComponent,
+    AppListComponent,
+    NavigationComponent,
+    PublicacionComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  providers: [
+    AppsService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
