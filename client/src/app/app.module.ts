@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,7 @@ import { AppListComponent } from './components/app-list/app-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 import {AppsService} from './services/apps.service';
-//import { from } from 'rxjs';
+import { PublicacionComponent } from './components/publicacion/publicacion.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +18,13 @@ import {AppsService} from './services/apps.service';
     AppFormComponent,
     AppListComponent,
     NavigationComponent,
+    PublicacionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     AppsService

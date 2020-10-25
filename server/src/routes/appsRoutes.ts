@@ -9,12 +9,12 @@ class AppsRoutes {
     }
     //Usa la propiedad router, definiendo ruta inicial
     config(): void{
+        //RUTAS PARA TRABAJAR LA TABLA DE USUARIOS
         this.router.get('/', appsController.list);
         this.router.get('/:id', appsController.getOne);
         this.router.post('/', appsController.create);
         this.router.delete('/:id', appsController.delete);
         this.router.put('/:id', appsController.update);
-        
     }
 }
 
