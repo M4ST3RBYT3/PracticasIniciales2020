@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { App } from 'src/app/models/App';
+
+import { AppsService } from '../../services/apps.service';
 
 @Component({
   selector: 'app-app-list',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppListComponent implements OnInit {
 
-  constructor() { }
+  publicaciones: any = []
 
-  ngOnInit(): void {
+  constructor(private appsService: AppsService) { }
+
+  ngOnInit() {
+    this.appsService.getPublicaciones().subscribe(
+      res => {
+        this.publicaciones = res;
+      },
+      err => console.error(err)
+    );
   }
 
 }

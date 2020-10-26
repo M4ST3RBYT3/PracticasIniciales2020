@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppListComponent} from './components/app-list/app-list.component';
+<<<<<<< HEAD
 import { CursosComponent } from './components/cursos/cursos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: AppListComponent
   },
   {
+<<<<<<< HEAD
     path: 'Publicacion/Cursos',
     component: CursosComponent
   },

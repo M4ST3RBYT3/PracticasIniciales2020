@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { AppListComponent } from './components/app-list/app-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 import {AppsService} from './services/apps.service';
+<<<<<<< HEAD
 import { CursosComponent } from './components/cursos/cursos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
@@ -20,6 +22,7 @@ import { ModificarComponent } from './components/modificar/modificar.component';
     AppFormComponent,
     AppListComponent,
     NavigationComponent,
+<<<<<<< HEAD
     CursosComponent,
     PerfilComponent,
     ModificarComponent,
@@ -27,7 +30,8 @@ import { ModificarComponent } from './components/modificar/modificar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     AppsService

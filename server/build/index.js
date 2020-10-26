@@ -10,6 +10,7 @@ const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 //Rutas para consultas
 const appsRoutes_1 = __importDefault(require("./routes/appsRoutes"));
+const publicacionesRoutes_1 = __importDefault(require("./routes/publicacionesRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -28,6 +29,7 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/api/apps', appsRoutes_1.default); //Prefijo para indicar la ruta inicial donde se usará
+        this.app.use('/api/Publicacion', publicacionesRoutes_1.default);
     }
     //iniciar el servidor, que el servidor escuche
     start() {

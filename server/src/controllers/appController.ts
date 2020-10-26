@@ -2,6 +2,7 @@ import {Request, Response} from 'express';
 import pool from '../database';
 
 class AppController{
+    // CONSULTAS PARA LA TABLA USUARIOS
     public async list(req: Request, res: Response){
       const usuario = await pool.query('SELECT * FROM usuario');
       res.json(usuario);
