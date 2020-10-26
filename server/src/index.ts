@@ -7,6 +7,7 @@ import indexRoutes from './routes/indexRoutes';
 //Rutas para consultas
 import appsRoutes from './routes/appsRoutes'; 
 import publicacionesRoutes from './routes/publicacionesRoutes'; 
+import consultasPublicacionesRoutes from './routes/consultaPublicacionRoutes';
 import { userInfo } from 'os';
 
 class Server{
@@ -31,7 +32,8 @@ class Server{
     routes(): void{
         this.app.use('/' ,indexRoutes);
         this.app.use('/api/apps',appsRoutes);       //Prefijo para indicar la ruta inicial donde se usará
-        this.app.use('/api/Publicacion', publicacionesRoutes)
+        this.app.use('/api/Publicacion', publicacionesRoutes);
+        this.app.use('/api/Extra', consultasPublicacionesRoutes);
     }
     //iniciar el servidor, que el servidor escuche
     start(): void{

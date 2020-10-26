@@ -16,5 +16,5 @@ class PublicacionesRoutes {
     }
 }
 
-const appsRoutes = new PublicacionesRoutes();
-export default appsRoutes.router;
+const publicacionesRoutes = new PublicacionesRoutes();
+export default publicacionesRoutes.router;

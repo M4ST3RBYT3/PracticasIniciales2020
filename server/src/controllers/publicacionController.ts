@@ -1,6 +1,5 @@
 import {Request, Response} from 'express';
 import pool from '../database';
-import appsController from './appController';
 
 class PublicacionController{
     // CONSULTAS PARA LA TABLA DE PUBLICACIONES

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { App } from '../models/App';
 import { Publicacion } from '../models/Publicacion';
-import { from, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -47,4 +47,16 @@ export class AppsService {
     return this.http.post('http://localhost:3000/api/apps', publicacion);
   }
 
+  //VALIDACIONES
+  getCodigoCurso(id: string){
+    return this.http.get(this.API_URI + "/Extra/Curso/" + id)
+  }
+
+  getNoCatedratico(id2: string){
+    return this.http.get(this.API_URI + "/Extra/Catedratico/" + id2);
+  }
+
+  getCatedraticoCurso(id3: string){
+    return this.http.get(this.API_URI + "/Extra/CatedraticoCurso/" + id3);
+  }
 }
