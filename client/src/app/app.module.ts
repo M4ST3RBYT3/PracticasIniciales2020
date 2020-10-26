@@ -15,6 +15,9 @@ import { CursosComponent } from './components/cursos/cursos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
 //import { from } from 'rxjs';
+=======
+import { PublicacionComponent } from './components/publicacion/publicacion.component';
+>>>>>>> 99932288c3ed0a91e7feb129871472237f817d4f
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { ModificarComponent } from './components/modificar/modificar.component';
     CursosComponent,
     PerfilComponent,
     ModificarComponent,
+=======
+    PublicacionComponent,
+>>>>>>> 99932288c3ed0a91e7feb129871472237f817d4f
   ],
   imports: [
     BrowserModule,
