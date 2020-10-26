@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppListComponent} from './components/app-list/app-list.component';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ModificarComponent } from './components/modificar/modificar.component';
 
 const routes: Routes = [
   {
@@ -12,6 +15,18 @@ const routes: Routes = [
   {
     path: 'Publicacion',
     component: AppListComponent
+  },
+  {
+    path: 'Publicacion/Cursos',
+    component: CursosComponent
+  },
+  {
+    path: 'Perfil',
+    component: PerfilComponent
+  },
+  {
+    path: 'Perfil/Modificar',
+    component: ModificarComponent
   }
 ];
 

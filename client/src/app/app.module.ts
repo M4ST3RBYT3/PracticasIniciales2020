@@ -9,6 +9,9 @@ import { AppListComponent } from './components/app-list/app-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 import {AppsService} from './services/apps.service';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { ModificarComponent } from './components/modificar/modificar.component';
 //import { from } from 'rxjs';
 
 @NgModule({
@@ -17,6 +20,9 @@ import {AppsService} from './services/apps.service';
     AppFormComponent,
     AppListComponent,
     NavigationComponent,
+    CursosComponent,
+    PerfilComponent,
+    ModificarComponent,
   ],
   imports: [
     BrowserModule,
