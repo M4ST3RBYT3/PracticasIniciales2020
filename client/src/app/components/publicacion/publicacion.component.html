@@ -1,0 +1,41 @@
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="Catedratico" name="customRadioInline1" class="custom-control-input" value="3" [(ngModel)]="publicacion.Tipo">
+                        <label class="custom-control-label" for="Catedratico">Catedratico</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="Curso" name="customRadioInline1" class="custom-control-input" value="2" [(ngModel)]="publicacion.Tipo">
+                        <label class="custom-control-label" for="Curso">Curso</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="CatedraticoCurso" name="customRadioInline1" class="custom-control-input" value="1" [(ngModel)]="publicacion.Tipo">
+                        <label class="custom-control-label" for="CatedraticoCurso">Catedratico Curso</label>
+                      </div>
+                </div>
+                <div>
+                    <div class="input-group mb-3">
+                      <input type="text" name="mensaje" placeholder="Ingrese el Curso | Catedratico | Catedratico y Curso" class="form-control" autofocus [(ngModel)]="publicacion.DatoCurso">
+                        <div class="input-group-append">
+                          <label class="input-group-text" for="inputGroupSelect02">Opciones</label>
+                        </div>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="mensaje" placeholder="Ingrese el mensaje" class="form-control" autofocus [(ngModel)]="publicacion.Mensaje">
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <button class="btn btn-success btn-block" (click)="savePublicacion()">Guardar</button>
+                  </div>
+                  <div class="col-md-6">
+                    <button class="btn btn-danger btn-block">Cancelar</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
