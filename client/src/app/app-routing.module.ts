@@ -7,6 +7,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
 
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
+import { PensumComponent } from './components/pensum/pensum.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
     path: 'Publicacion/add',
     component: PublicacionComponent
 
+  },
+  {
+    path: 'Publicacion/Perfil/Pensum',
+    component: PensumComponent
   }
 ];
 
