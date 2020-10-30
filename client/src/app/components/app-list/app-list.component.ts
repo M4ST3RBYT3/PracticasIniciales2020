@@ -10,7 +10,7 @@ import { AppsService } from '../../services/apps.service';
 })
 export class AppListComponent implements OnInit {
 
-  publicaciones: any = []
+  publicaciones: any = [];
 
   constructor(private appsService: AppsService) { }
 
