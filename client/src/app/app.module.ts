@@ -11,6 +11,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 
 import {AppsService} from './services/apps.service';
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PublicacionComponent } from './components/publicacion/publicacion.compo
     AppListComponent,
     NavigationComponent,
     PublicacionComponent,
+    ComentariosComponent,
   ],
   imports: [
     BrowserModule,

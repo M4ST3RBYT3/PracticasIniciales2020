@@ -1,11 +1,25 @@
 <div class="col-md-12" *ngFor="let publicacion of publicaciones">
     <div class="card text-center">
         <div class="card-header">
-            <h1>{{publicacion.Usuario_Carnet}}</h1>
-            <h1>{{publicacion.Curso_CodigoCurso}}</h1>
-            <h1>{{publicacion.Catedratico_NoCatedratico}}</h1>
+            <div class="row">
+                <div class="col-md-2">
+                    <h3>{{publicacion.Usuario_Carnet}}</h3>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-4">
+                    <p>Fecha de publicacion: {{publicacion.Fecha | date: 'yyyy-MM-dd'}}</p>
+                </div>
+            </div>
         </div>
         <div class="card-body">
+            <div class="row">
+                <h2>Catedratico </h2>
+                <h2>: {{publicacion.Nombres == null ? 'Datos no': publicacion.Nombres}} {{publicacion.Apellidos == null ? 'proporcionados': publicacion.Apellidos}}</h2>
+            </div>
+            <div class="row">
+                <h2>Curso </h2>
+                <h2>: {{publicacion.Nombre == null ? 'Datos no proporcionados': publicacion.Nombre}}</h2>
+            </div>
             <div class="row">
                 <p>Mensaje: {{publicacion.Mensaje}}</p>
             </div>
@@ -28,5 +42,6 @@
             </div>
         </div>
     </div>
+    <br>
 
 </div>

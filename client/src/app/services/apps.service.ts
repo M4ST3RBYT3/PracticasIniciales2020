@@ -44,7 +44,7 @@ export class AppsService {
   }
 
   savePublicacion(publicacion: Publicacion){
-    return this.http.post('http://localhost:3000/api/apps', publicacion);
+    return this.http.post('http://localhost:3000/api/Publicacion/', publicacion);
   }
 
   //VALIDACIONES
