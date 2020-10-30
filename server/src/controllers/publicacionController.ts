@@ -4,6 +4,7 @@ import appsController from './appController';
 
 class PublicacionController{
     // CONSULTAS PARA LA TABLA DE PUBLICACIONES
+
     public async listarPublicaciones(req: Request, res: Response) {
         const usuario = await pool.query('SELECT * FROM publicacion');
         res.json(usuario);
