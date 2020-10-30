@@ -10,9 +10,9 @@ class ConsultaPublicacionController{
 
     config(): void{
         //RUTAS PARA CONSULTAR ELEMENTOS EXTRAS EN PUBLICACIOENS
-        this.router.get('/Curso/:id', consultasPublicacionController.getCodigoCurso)
-        this.router.get('/Catedratico/:id2', consultasPublicacionController.getNoCatedratico)
-        this.router.get('/CatedraticoCurso/:id3', consultasPublicacionController.getIdCatedraticoCurso)
+        this.router.get('/Curso', consultasPublicacionController.getCodigoCurso)
+        this.router.get('/Catedratico', consultasPublicacionController.getNoCatedratico)
+        this.router.get('/CatedraticoCurso', consultasPublicacionController.getIdCatedraticoCurso)
     }
 }
 

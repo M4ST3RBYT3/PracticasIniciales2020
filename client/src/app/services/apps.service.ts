@@ -48,15 +48,16 @@ export class AppsService {
   }
 
   //VALIDACIONES
-  getCodigoCurso(id: string){
-    return this.http.get(this.API_URI + "/Extra/Curso/" + id)
+  getCodigoCurso(){
+    return this.http.get(this.API_URI + "/Extra/Curso/")
   }
 
-  getNoCatedratico(id2: string){
-    return this.http.get(this.API_URI + "/Extra/Catedratico/" + id2);
+  getNoCatedratico(){
+    return this.http.get(this.API_URI + "/Extra/Catedratico/");
   }
 
-  getCatedraticoCurso(id3: string){
-    return this.http.get(this.API_URI + "/Extra/CatedraticoCurso/" + id3);
+  getCatedraticoCurso(){
+    return this.http.get(this.API_URI + "/Extra/CatedraticoCurso/");
   }
+
 }

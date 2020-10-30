@@ -16,33 +16,20 @@ const database_1 = __importDefault(require("../database"));
 class ConsultaPublicacionController {
     getCodigoCurso(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const curso = yield database_1.default.query('SELECT CodigoCurso FROM curso WHERE Nombre = ?', [id]);
-            if (curso.length > 0) {
-                return res.json(curso[0]);
-            }
-            res.status(404).json({ text: 'El curso no existe' });
+            const curso = yield database_1.default.query('SELECT * FROM curso');
+            res.json(curso);
         });
     }
     getNoCatedratico(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id2 } = req.params;
-            const curso = yield database_1.default.query('SELECT NoCatedratico FROM catedratico WHERE Nombres = ?', [id2]);
-            if (curso.length > 0) {
-                return res.json(curso[0]);
-            }
-            res.status(404).json({ text: 'El catedratico no existe' });
+            const catedratico = yield database_1.default.query('SELECT * FROM catedratico');
+            return res.json(catedratico);
         });
     }
     getIdCatedraticoCurso(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id3 } = req.params;
-            var entrada = id3.split("", 2);
-            const catedraticoCurso = yield database_1.default.query('SELECT idCatedraticoCurso FROM curso_catedratico WHERE Curso_CodigoCurso = ? AND Catedratico_NoCatedratico = ?', [entrada[0], entrada[1]]);
-            if (catedraticoCurso.length > 0) {
-                return res.json(catedraticoCurso[0]);
-            }
-            res.status(404).json({ text: 'El id de catedratico en un curso no existe' });
+            const catedraticoCurso = yield database_1.default.query('SELECT curso_catedratico.idCatedraticoCurso, curso.Nombre, catedratico.Nombres, catedratico.Apellidos FROM ((curso_catedratico INNER JOIN curso on curso_catedratico.Curso_CodigoCurso = curso.CodigoCurso)INNER JOIN catedratico on curso_catedratico.Catedratico_NoCatedratico = catedratico.NoCatedratico)');
+            res.json(catedraticoCurso);
         });
     }
 }

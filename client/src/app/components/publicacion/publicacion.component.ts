@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PublicacionVista } from '../../models/PublicacionVista';
 import { Publicacion } from '../../models/Publicacion';
 
 import { AppsService } from '../../services/apps.service';
@@ -11,12 +10,9 @@ import { AppsService } from '../../services/apps.service';
 })
 export class PublicacionComponent implements OnInit {
 
-  publicacionVista: PublicacionVista = {
-    Mensaje: '',
-    Usuario_Carnet: 201908325,
-    DatoCurso: '',
-    Tipo: null
-  }
+  cursos: any = [];
+  catedraticos: any = [];
+  cursoCatedraticos: any = [];
 
   publicacion: Publicacion ={
     Mensaje: '',
@@ -30,27 +26,24 @@ export class PublicacionComponent implements OnInit {
   constructor(private appsService: AppsService) { }
 
   ngOnInit(): void {
+    this.appsService.getCodigoCurso().subscribe(
+      res => {
+        this.cursos = res;
+      },
+      err => console.error(err)
+    );
+    this.appsService.getNoCatedratico().subscribe(
+      res => {
+        this.catedraticos = res
+      },
+      err => console.error(err)
+    );
+    this.appsService.getCatedraticoCurso().subscribe(
+      res => {
+        this.cursoCatedraticos = res
+      },
+      err => console.error(err)
+    );
   }
 
-  //CON ESTE METODO GUARDAMOS LOS DATOS
-  savePublicacion(){
-    console.log(this.publicacionVista);   
-    if(this.publicacionVista.Tipo == 1){
-      var entrada = this.publicacionVista.DatoCurso.toString();
-      var separado = entrada.split(",", 2);
-      this.appsService.getCatedraticoCurso('11').subscribe(
-        res => {
-           console.log(res);
-        },
-        err => console.error(err)
-      );
-      console.log(this.publicacion);
-    }
-    else if (this.publicacionVista.Tipo == 2){
-      
-    }
-    else if (this.publicacionVista.Tipo == 3){
-      
-    }    
-  }
 }

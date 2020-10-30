@@ -12,9 +12,9 @@ class ConsultaPublicacionController {
     }
     config() {
         //RUTAS PARA CONSULTAR ELEMENTOS EXTRAS EN PUBLICACIOENS
-        this.router.get('/Curso/:id', consultaPublicacionController_1.default.getCodigoCurso);
-        this.router.get('/Catedratico/:id2', consultaPublicacionController_1.default.getNoCatedratico);
-        this.router.get('/CatedraticoCurso/:id3', consultaPublicacionController_1.default.getIdCatedraticoCurso);
+        this.router.get('/Curso', consultaPublicacionController_1.default.getCodigoCurso);
+        this.router.get('/Catedratico', consultaPublicacionController_1.default.getNoCatedratico);
+        this.router.get('/CatedraticoCurso', consultaPublicacionController_1.default.getIdCatedraticoCurso);
     }
 }
 const cPublicacionRoutes = new ConsultaPublicacionController();
