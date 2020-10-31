@@ -1,3 +1,18 @@
+<div class="col-md-12">
+    <form>
+        <a routerLink="Publicacion/add" class="btn btn-outline-secondary my-2 my-sm-0" routerLinkActive="active" style="margin-right: 25%;">NuevaPublicacion</a>
+    </form>
+    <form class="form-inline my-2 my-ly-0">
+        <input type="radio" id="catedratico" name="grupofinltro" value="catedratico" style="margin: 5px;">
+        <label for="catedratico" style="margin-right: 15px;">Catedratico</label>
+        <input type="radio" id="curso" name="grupofinltro" value="curso" style="margin: 5px;">
+        <label for="curso" style="margin-right: 15px;">Curso</label>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            style="width: 300px;">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+    <br>
+</div>
 <div class="col-md-12" *ngFor="let publicacion of publicaciones">
     <div class="card text-center">
         <div class="card-header">
@@ -14,7 +29,8 @@
         <div class="card-body">
             <div class="row">
                 <h2>Catedratico </h2>
-                <h2>: {{publicacion.Nombres == null ? 'Datos no': publicacion.Nombres}} {{publicacion.Apellidos == null ? 'proporcionados': publicacion.Apellidos}}</h2>
+                <h2>: {{publicacion.Nombres == null ? 'Datos no': publicacion.Nombres}}
+                    {{publicacion.Apellidos == null ? 'proporcionados': publicacion.Apellidos}}</h2>
             </div>
             <div class="row">
                 <h2>Curso </h2>
@@ -24,24 +40,21 @@
                 <p>Mensaje: {{publicacion.Mensaje}}</p>
             </div>
             <div class="row">
+                <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <a href="#" class="btn btn-info btn-block">
+                    <a class="btn btn-dark btn-block"
+                        [routerLink]="['/Publicacion/Comentario', publicacion.idPublicacion]">
                         Ver Comentarios
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#" class="btn btn-info btn-block">
+                    <a href="#" class="btn btn-warning btn-block">
                         Ver Perfil
                     </a>
                 </div>
-                <div class="col-md-4">
-                    <a href="#" class="btn btn-info btn-block">
-                        Dejar Comentario
-                    </a>
-                </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
     <br>
-
 </div>

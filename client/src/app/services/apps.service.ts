@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { App } from '../models/App';
 import { Publicacion } from '../models/Publicacion';
+import { Comentario } from '../models/Comentario';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -60,4 +61,13 @@ export class AppsService {
     return this.http.get(this.API_URI + "/Extra/CatedraticoCurso/");
   }
 
+  //COMENTARIO
+  getComentarios(id: string){
+    return this.http.get(this.API_URI + "/Comentarios/" + id)
+  }
+
+  setComentario(comentario: Comentario){
+    return this.http.post(this.API_URI + "/Comentarios", comentario);
+  }
+  
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Publicacion } from '../../models/Publicacion';
+import { Router } from '@angular/router';
 
 import { AppsService } from '../../services/apps.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-publicacion',
@@ -23,7 +25,7 @@ export class PublicacionComponent implements OnInit {
     Tipo: 0 
   }
   
-  constructor(private appsService: AppsService) { }
+  constructor(private appsService: AppsService, private route: Router) { }
 
   ngOnInit(): void {
     this.appsService.getCodigoCurso().subscribe(
@@ -65,6 +67,7 @@ export class PublicacionComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
+          this.route.navigate(['/Publicacion']);
         },
         err => console.error(err)
       )   
