@@ -9,7 +9,7 @@ import appsRoutes from './routes/appsRoutes';
 import publicacionesRoutes from './routes/publicacionesRoutes'; 
 import consultasPublicacionesRoutes from './routes/consultaPublicacionRoutes';
 import comentariosRoutes from './routes/comentariosRoutes';
-import { userInfo } from 'os';
+import filtrosRoutes from   './routes/filtrosRoutes';
 
 class Server{
     // inicializar express
@@ -36,6 +36,7 @@ class Server{
         this.app.use('/api/Publicacion', publicacionesRoutes);
         this.app.use('/api/Extra', consultasPublicacionesRoutes);
         this.app.use('/api/Comentarios', comentariosRoutes);
+        this.app.use('/api/Filtros', filtrosRoutes);
     }
     //iniciar el servidor, que el servidor escuche
     start(): void{

@@ -13,6 +13,7 @@ const appsRoutes_1 = __importDefault(require("./routes/appsRoutes"));
 const publicacionesRoutes_1 = __importDefault(require("./routes/publicacionesRoutes"));
 const consultaPublicacionRoutes_1 = __importDefault(require("./routes/consultaPublicacionRoutes"));
 const comentariosRoutes_1 = __importDefault(require("./routes/comentariosRoutes"));
+const filtrosRoutes_1 = __importDefault(require("./routes/filtrosRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -34,6 +35,7 @@ class Server {
         this.app.use('/api/Publicacion', publicacionesRoutes_1.default);
         this.app.use('/api/Extra', consultaPublicacionRoutes_1.default);
         this.app.use('/api/Comentarios', comentariosRoutes_1.default);
+        this.app.use('/api/Filtros', filtrosRoutes_1.default);
     }
     //iniciar el servidor, que el servidor escuche
     start() {

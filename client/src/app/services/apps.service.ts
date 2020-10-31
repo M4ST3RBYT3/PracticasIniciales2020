@@ -69,5 +69,21 @@ export class AppsService {
   setComentario(comentario: Comentario){
     return this.http.post(this.API_URI + "/Comentarios", comentario);
   }
+
+  //FILTROS
+  getCatedraticos(){
+    return this.http.get(this.API_URI + "/Filtros/Catedratico/");
+  }
   
+  getCursos(){
+    return this.http.get(this.API_URI + "/Filtros/Curso/")
+  }
+
+  getCursoNombre(curso: string){
+    return this.http.get(this.API_URI + "/Filtros/Curso/Nombre/" + curso)
+  }
+
+  getCatedraticoNombre(catedratico: string){
+    return this.http.get(this.API_URI + "/Filtros/Catedratico/Nombre/" + catedratico)
+  }
 }
