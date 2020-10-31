@@ -1,17 +1,26 @@
 <div class="col-md-12">
     <div class="row">
         <form>
-            <a routerLink="Publicacion/add" class="btn btn-outline-secondary my-2 my-sm-0"
-                style="margin-right: 340px;" routerLinkActive="active">NuevaPublicacion</a>
+            <a routerLink="Publicacion/add" class="btn btn-outline-secondary my-2 my-sm-0" style="margin-right: 340px;"
+                routerLinkActive="active">NuevaPublicacion</a>
         </form>
         <form class="form-inline my-2 my-ly-0">
-            <input type="radio" id="catedratico" name="grupofinltro" value="2" style="margin: 5px;" [(ngModel)] = "paramsfiltro.Tipo">
-            <label for="catedratico" style="margin-right: 15px;">Catedratico</label>
-            <input type="radio" id="curso" name="grupofinltro" value="3" style="margin: 5px;" [(ngModel)] = "paramsfiltro.Tipo">
-            <label for="curso" style="margin-right: 15px;">Curso</label>
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                style="width: 300px;" [(ngModel)] = "paramsfiltro.Mensaje">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click) = "filtro()">Buscar</button>
+            <div class="form-group">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Catedratico" name="customRadioInline1" class="custom-control-input"
+                        value="2" [(ngModel)]="paramsfiltro.Tipo">
+                    <label class="custom-control-label" for="Catedratico">Catedratico</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Curso" name="customRadioInline1" class="custom-control-input" value="3"
+                        [(ngModel)]="paramsfiltro.Tipo">
+                    <label class="custom-control-label" for="Curso">Curso</label>
+                </div>
+                <div class="custom-control">
+                    <input type="text" name="mensaje" placeholder="Ingrese el mensaje" class="form-control" autofocus [(ngModel)]="paramsfiltro.Mensaje">
+                </div>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="filtro()">Buscar</button>
+            </div>
         </form>
     </div>
     <br>

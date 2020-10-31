@@ -30,7 +30,7 @@ export class AppListComponent implements OnInit {
 
   filtro(){
     //Filtro para buscar catedratico por nombre
-    if(this.paramsfiltro.Tipo == 3 && this.paramsfiltro.Mensaje != ''){
+    if(this.paramsfiltro.Tipo == 2 && this.paramsfiltro.Mensaje != ''){
       this.appsService.getCatedraticoNombre(this.paramsfiltro.Mensaje).subscribe(
         res => {
           this.publicaciones = res;
@@ -39,7 +39,7 @@ export class AppListComponent implements OnInit {
       );
     }
     //Filtro para buscar curso por nombre
-    else if(this.paramsfiltro.Tipo == 2 && this.paramsfiltro.Mensaje != ''){
+    else if(this.paramsfiltro.Tipo == 3 && this.paramsfiltro.Mensaje != ''){
       this.appsService.getCursoNombre(this.paramsfiltro.Mensaje).subscribe(
         res => {
           this.publicaciones = res;
