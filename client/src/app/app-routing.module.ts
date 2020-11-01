@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -13,12 +14,12 @@ import { PublicacionComponent } from './components/publicacion/publicacion.compo
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/Publicacion',
+    redirectTo: '/Inicio',
     pathMatch: 'full'
   },
   {
-    path: 'Publicacion',
-    component: AppListComponent
+    path: 'Inicio',
+    component: LoginComponent
   },
   {
 

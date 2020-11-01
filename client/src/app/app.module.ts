@@ -16,6 +16,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
 
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -30,6 +31,8 @@ import { PublicacionComponent } from './components/publicacion/publicacion.compo
     ModificarComponent,
 
     PublicacionComponent,
+
+    LoginComponent,
 
   ],
   imports: [
