@@ -45,7 +45,7 @@ class FiltroController{
         'FROM publicacion '+
         'LEFT JOIN curso on curso.CodigoCurso = publicacion.Curso_CodigoCurso '+
         'LEFT JOIN catedratico on catedratico.NoCatedratico = publicacion.Catedratico_NoCatedratico '+
-        'WHERE curso.Nombre = ' + id  + 
+        'WHERE curso.CodigoCurso = ' + id  + 
         ' UNION '+
         'SELECT publicacion.idPublicacion, publicacion.Usuario_Carnet, publicacion.Mensaje, publicacion.Fecha, catedratico.Nombres, catedratico.Apellidos, curso.Nombre '+
         'FROM publicacion '+
