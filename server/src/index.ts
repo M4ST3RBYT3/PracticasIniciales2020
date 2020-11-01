@@ -7,7 +7,9 @@ import indexRoutes from './routes/indexRoutes';
 //Rutas para consultas
 import appsRoutes from './routes/appsRoutes'; 
 import publicacionesRoutes from './routes/publicacionesRoutes'; 
-import { userInfo } from 'os';
+import consultasPublicacionesRoutes from './routes/consultaPublicacionRoutes';
+import comentariosRoutes from './routes/comentariosRoutes';
+import filtrosRoutes from   './routes/filtrosRoutes';
 
 class Server{
     // inicializar express
@@ -31,7 +33,10 @@ class Server{
     routes(): void{
         this.app.use('/' ,indexRoutes);
         this.app.use('/api/apps',appsRoutes);       //Prefijo para indicar la ruta inicial donde se usará
-        this.app.use('/api/Publicacion', publicacionesRoutes)
+        this.app.use('/api/Publicacion', publicacionesRoutes);
+        this.app.use('/api/Extra', consultasPublicacionesRoutes);
+        this.app.use('/api/Comentarios', comentariosRoutes);
+        this.app.use('/api/Filtros', filtrosRoutes);
     }
     //iniciar el servidor, que el servidor escuche
     start(): void{

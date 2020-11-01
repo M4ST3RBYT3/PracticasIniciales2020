@@ -1,32 +1,72 @@
+<div class="col-md-12">
+    <div class="row">
+        <form>
+            <a routerLink="Publicacion/add" class="btn btn-outline-secondary my-2 my-sm-0" style="margin-right: 340px;"
+                routerLinkActive="active">NuevaPublicacion</a>
+        </form>
+        <form class="form-inline my-2 my-ly-0">
+            <div class="form-group">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Catedratico" name="customRadioInline1" class="custom-control-input"
+                        value="2" [(ngModel)]="paramsfiltro.Tipo">
+                    <label class="custom-control-label" for="Catedratico">Catedratico</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="Curso" name="customRadioInline1" class="custom-control-input" value="3"
+                        [(ngModel)]="paramsfiltro.Tipo">
+                    <label class="custom-control-label" for="Curso">Curso</label>
+                </div>
+                <div class="custom-control">
+                    <input type="text" name="mensaje" placeholder="Ingrese el mensaje" class="form-control" autofocus [(ngModel)]="paramsfiltro.Mensaje">
+                </div>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="filtro()">Buscar</button>
+            </div>
+        </form>
+    </div>
+    <br>
+</div>
 <div class="col-md-12" *ngFor="let publicacion of publicaciones">
     <div class="card text-center">
         <div class="card-header">
-            <h1>{{publicacion.Usuario_Carnet}}</h1>
-            <h1>{{publicacion.Curso_CodigoCurso}}</h1>
-            <h1>{{publicacion.Catedratico_NoCatedratico}}</h1>
+            <div class="row">
+                <div class="col-md-2">
+                    <h3>{{publicacion.Usuario_Carnet}}</h3>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-4">
+                    <p>Fecha de publicacion: {{publicacion.Fecha | date: 'yyyy-MM-dd'}}</p>
+                </div>
+            </div>
         </div>
         <div class="card-body">
+            <div class="row">
+                <h2>Catedratico </h2>
+                <h2>: {{publicacion.Nombres == null ? 'Datos no': publicacion.Nombres}}
+                    {{publicacion.Apellidos == null ? 'proporcionados': publicacion.Apellidos}}</h2>
+            </div>
+            <div class="row">
+                <h2>Curso </h2>
+                <h2>: {{publicacion.Nombre == null ? 'Datos no proporcionados': publicacion.Nombre}}</h2>
+            </div>
             <div class="row">
                 <p>Mensaje: {{publicacion.Mensaje}}</p>
             </div>
             <div class="row">
+                <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <a href="#" class="btn btn-info btn-block">
+                    <a class="btn btn-dark btn-block"
+                        [routerLink]="['/Publicacion/Comentario', publicacion.idPublicacion]">
                         Ver Comentarios
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#" class="btn btn-info btn-block">
+                    <a href="#" class="btn btn-warning btn-block">
                         Ver Perfil
                     </a>
                 </div>
-                <div class="col-md-4">
-                    <a href="#" class="btn btn-info btn-block">
-                        Dejar Comentario
-                    </a>
-                </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </div>
-
+    <br>
 </div>

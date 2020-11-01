@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { App } from '../models/App';
 import { Publicacion } from '../models/Publicacion';
-import { from, Observable } from 'rxjs';
+import { Comentario } from '../models/Comentario';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,45 @@ export class AppsService {
   }
 
   savePublicacion(publicacion: Publicacion){
-    return this.http.post('http://localhost:3000/api/apps', publicacion);
+    return this.http.post('http://localhost:3000/api/Publicacion/', publicacion);
   }
 
+  //VALIDACIONES
+  getCodigoCurso(){
+    return this.http.get(this.API_URI + "/Extra/Curso/")
+  }
+
+  getNoCatedratico(){
+    return this.http.get(this.API_URI + "/Extra/Catedratico/");
+  }
+
+  getCatedraticoCurso(){
+    return this.http.get(this.API_URI + "/Extra/CatedraticoCurso/");
+  }
+
+  //COMENTARIO
+  getComentarios(id: string){
+    return this.http.get(this.API_URI + "/Comentarios/" + id)
+  }
+
+  setComentario(comentario: Comentario){
+    return this.http.post(this.API_URI + "/Comentarios", comentario);
+  }
+
+  //FILTROS
+  getCatedraticos(){
+    return this.http.get(this.API_URI + "/Filtros/Catedratico/");
+  }
+  
+  getCursos(){
+    return this.http.get(this.API_URI + "/Filtros/Curso/")
+  }
+
+  getCursoNombre(curso: string){
+    return this.http.get(this.API_URI + "/Filtros/Curso/Nombre/" + curso)
+  }
+
+  getCatedraticoNombre(catedratico: string){
+    return this.http.get(this.API_URI + "/Filtros/Catedratico/Nombre/" + catedratico)
+  }
 }

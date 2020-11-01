@@ -10,14 +10,12 @@ import { AppListComponent } from './components/app-list/app-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 import {AppsService} from './services/apps.service';
-<<<<<<< HEAD
 import { CursosComponent } from './components/cursos/cursos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
-//import { from } from 'rxjs';
-=======
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
->>>>>>> 99932288c3ed0a91e7feb129871472237f817d4f
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
+
 
 @NgModule({
   declarations: [
@@ -25,13 +23,11 @@ import { PublicacionComponent } from './components/publicacion/publicacion.compo
     AppFormComponent,
     AppListComponent,
     NavigationComponent,
-<<<<<<< HEAD
     CursosComponent,
     PerfilComponent,
     ModificarComponent,
-=======
     PublicacionComponent,
->>>>>>> 99932288c3ed0a91e7feb129871472237f817d4f
+    ComentariosComponent,
   ],
   imports: [
     BrowserModule,

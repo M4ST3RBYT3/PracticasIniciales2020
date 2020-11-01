@@ -8,7 +8,7 @@ create TABLE Usuario(
     correo varchar(45)
 );
 create table Curso(
-    CodigoCurso int PRIMARY KEY not null AUTO_INCREMENT,
+    CodigoCurso int PRIMARY KEY not null,
     Nombre varchar(45)
 );
 

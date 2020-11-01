@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card text-center">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-2">
+                        <h3>{{publicaciones.Usuario_Carnet}}</h3>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-4">
+                        <p>Fecha de publicacion: {{publicaciones.Fecha | date: 'yyyy-MM-dd'}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h2>Catedratico </h2>
+                    <h2>: {{publicaciones.Nombres == null ? 'Datos no': publicaciones.Nombres}}
+                        {{publicaciones.Apellidos == null ? 'proporcionados': publicaciones.Apellidos}}</h2>
+                </div>
+                <div class="row">
+                    <h2>Curso </h2>
+                    <h2>: {{publicaciones.Nombre == null ? 'Datos no proporcionados': publicaciones.Nombre}}</h2>
+                </div>
+                <div class="row">
+                    <p>Mensaje: {{publicaciones.Mensaje}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="col-md-12">
+    <h1>Se cuidadoso con lo que comentas, no faltes el respeto.</h1>
+    <div class="col-md-12" *ngFor="let comentario of comentarios">
+        <div class="mb-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="validatedInputGroupPrepend">{{comentario.Usuario_Carnet}}</span>
+                </div>
+                <div class="col-md-10">
+                    <p style="margin-left: 3px; font-size: 25px;">{{comentario.Mensaje}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="col-md 12">
+    <div class="row">
+        <div class="col-md-6">
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal" data-target="#exampleModal">
+                Agregar Comentario
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">SCD - Comentario</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input style="width: 100%;" type="text" placeholder="Mensaje" autofocus [(ngModel)]="comentario.Mensaje">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success" (click)="agregarComentario()">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button routerLink="/" type="button" class="btn btn-outline-danger btn-block">Regresar al menu</button>
+        </div>
+    </div>
+</div>

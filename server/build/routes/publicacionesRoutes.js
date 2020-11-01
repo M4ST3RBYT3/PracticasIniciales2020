@@ -17,5 +17,5 @@ class PublicacionesRoutes {
         this.router.post('/', publicacionController_1.default.createPublicacion);
     }
 }
-const appsRoutes = new PublicacionesRoutes();
-exports.default = appsRoutes.router;
+const publicacionesRoutes = new PublicacionesRoutes();
+exports.default = publicacionesRoutes.router;
