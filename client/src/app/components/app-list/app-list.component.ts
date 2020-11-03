@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { App } from 'src/app/models/App';
-
 import { AppsService } from '../../services/apps.service';
 
 @Component({

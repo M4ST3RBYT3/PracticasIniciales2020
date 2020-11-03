@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { AppsService} from '../../services/apps.service';
+import { Route,Router } from '@Angular/router';
+import { App } from 'src/app/models/App'
 
 @Component({
   selector: 'app-modificar',
@@ -7,9 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModificarComponent implements OnInit {
 
-  constructor() { }
+apps: any = [];
 
-  ngOnInit(): void {
-  }
+app: App = {
+Carnet: 201904025,
+Nombres: '',
+Apellidos: '',
+correo: '',
+contrasena: 'anitabb'
+}
 
+  constructor(private appsService: AppsService, private router: Router) { }
+
+    ngOnInit() {
+    }
+    updateUsuario(){
+  
+      console.log(this.app);
+      this.appsService.updateUsuario(this.app.Carnet ,this.app).subscribe(
+
+        res => {
+
+          console.log(res);
+          this.router.navigate(['/Publicacion/Perfil'])
+  
+        },
+        err => console.error(err)
+      )
+    }
+  
+
+ 
+
+    
 }

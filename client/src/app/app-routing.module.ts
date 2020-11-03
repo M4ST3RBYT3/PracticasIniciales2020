@@ -29,7 +29,7 @@ const routes: Routes = [
     component: PerfilComponent
   },
   {
-    path: 'Publicacion/Perfil/Modificar',
+    path: 'Publicacion/Perfil/Modificar/:Carnet',
     component: ModificarComponent
   },
   {

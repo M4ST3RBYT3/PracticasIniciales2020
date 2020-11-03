@@ -1,15 +1,19 @@
+
+<br>
+<br>
 <div class="card">
     <div class="card-body">
-        <label for="modificarnombre" style="margin-left: 400px;  background: rgb(153, 190, 204)  ;padding: 10px;">MODIFICAR DATOS PERSONALES</label><br>
-<br>
-<label for="modificarnombre" style="margin-left: 30px; margin: 20px;background: rgb(164, 236, 161); padding: 10px;">INGRESAR NUEVO NOMBRE</label>
-<input class="form-control mr-sm-2" type="write" placeholder="INGRESE EN NOMBRE" aria-label="modificar datos" style="width: 220px; background: whitesmoke; margin-left: 30px; margin: 20px">
-<label for="modificarapellido" style="margin-left: 30px; margin: 20px;background: rgb(164, 236, 161); padding: 10px;">INGRESAR NUEVO APELLIDO</label>
-<input class="form-control mr-sm-2" type="write" placeholder="INGRESE EL APELLIDO" aria-label="modificar datos" style="width: 220px; background: whitesmoke; margin-left: 20px; margin: 20px">
-<label for="modificarcorreo" style="margin-left: 30px; margin: 20px;background: rgb(164, 236, 161); padding: 10px;">INGRESAR NUEVO CORREO</label>
-<input class="form-control mr-sm-2" type="write" placeholder="INGRESE EL CORREO" aria-label="modificar datos" style="width: 220px; background: whitesmoke; margin-left: 20px; margin: 20px">
-<button class="button" type="submit" style="float: right;" >MODIFICAR</button>
-
+        <form>
+            <label for="modificarnombre" style="margin-left: 400px;  background: rgb(153, 190, 204)  ;padding: 10px;">MODIFICAR DATOS PERSONALES</label><br>
+            <br>
+            <label for="modificarnombre" style="margin-left: 30px; margin: 20px;background: rgb(164, 236, 161); padding: 10px;">INGRESAR NUEVO NOMBRE</label>
+            <input class="form-control mr-sm-2" name="Nombres" [(ngModel)]="app.Nombres"  type="write" placeholder="INGRESE EN NOMBRE" aria-label="modificar datos" style="width: 220px; background: whitesmoke; margin-left: 30px; margin: 20px">
+            <label for="modificarapellido" style="margin-left: 30px; margin: 20px;background: rgb(164, 236, 161); padding: 10px;">INGRESAR NUEVO APELLIDO</label>
+            <input class="form-control mr-sm-2" name="Apellidos"  [(ngModel)]="app.Apellidos"  type="write" placeholder="INGRESE EL APELLIDO" aria-label="modificar datos" style="width: 220px; background: whitesmoke; margin-left: 20px; margin: 20px">
+            <label for="modificarcorreo" style="margin-left: 30px; margin: 20px;background: rgb(164, 236, 161); padding: 10px;">INGRESAR NUEVO CORREO</label>
+            <input class="form-control mr-sm-2" name="correo"  [(ngModel)]="app.correo"  type="write" placeholder="INGRESE EL CORREO" aria-label="modificar datos" style="width: 220px; background: whitesmoke; margin-left: 20px; margin: 20px">
+            <button class="button" type="submit" style="float: right;" (click)="updateUsuario()">MODIFICAR</button>
+        </form>
     </div>
 </div>
 
