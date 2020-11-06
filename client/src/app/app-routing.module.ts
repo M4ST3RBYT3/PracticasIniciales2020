@@ -21,7 +21,7 @@ const routes: Routes = [
     component: AppListComponent
   },
   {
-    path: 'Publicacion/Perfil/Cursos',
+    path: 'Publicacion/Perfil/Cursos/:Carnet',
     component: CursosComponent
   },
   {

@@ -4,7 +4,7 @@
                 <a [routerLink]="['/Publicacion/Perfil/Modificar',app.Carnet]" class="button"  type="submit" routerLinkActive="active" style = "margin-left: 275px;" >Modificar Perfil</a>
         
                 <a routerLink="/Publicacion/Perfil/Pensum" class="button" type="submit" routerLinkActive="active"   style="margin-left: 20px; " >Ver Pensum</a>
-        <button routerLink="/Publicacion/Perfil/Cursos" class="button" style="margin-left: 20px; " >Cargar Cursos</button><br>
+        <button [routerLink]="['/Publicacion/Perfil/Cursos',app.Carnet]" class="button" style="margin-left: 20px; " >Cargar Cursos</button><br>
         <br>
         <br>
             <label for=carnet style="margin-left: 20px; " style="margin-right: 30px;" style="margin: 15px;" >Carnet: </label> <input type="text" size="25" maxlength="30" value="{{app.Carnet}}" name="carnettext" style="background: rgb(181, 243, 222);"><br>

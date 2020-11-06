@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { App } from '../models/App';
 import { Publicacion } from '../models/Publicacion';
 import { from, Observable } from 'rxjs';
+import { CursoAprobado } from '../models/CursoAprobado';
 
 
 
@@ -47,7 +48,10 @@ export class AppsService {
   savePublicacion(publicacion: Publicacion){
     return this.http.post('http://localhost:3000/api/apps', publicacion);
   }
-
+   
+  guardarCurso(curso:CursoAprobado){
+    return this.http.post(`${this.API_URI}/CursosAprobados/`, curso);
+  }
   
   
 
@@ -55,3 +59,34 @@ export class AppsService {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
