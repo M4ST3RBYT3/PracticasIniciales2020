@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import {HttpClient} from '@angular/common/http'
 import { App } from '../models/App';
 import { Publicacion } from '../models/Publicacion';
 import { Comentario } from '../models/Comentario';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
+import { CursoAprobado } from '../models/CursoAprobado';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,8 @@ export class AppsService {
     return this.http.get(this.API_URI+'/apps');
   }
 
-  getUsuario(id: string){
-    return this.http.get('http://localhost:3000/api/apps/${id}');
+  getUsuario(Carnet: number){
+    return this.http.get(`${this.API_URI}/apps/${Carnet}`);
   }
 
   deleteUsuario(id: string ){
@@ -31,8 +33,8 @@ export class AppsService {
     return this.http.post('http://localhost:3000/api/apps', usuario);
   }
 
-  updateUsuario(id, updatedUsuario): Observable<App>{
-    return this.http.put('http://localhost:3000/api/apps/${id}', updatedUsuario);
+  updateUsuario(Carnet: number, updatedUsuario:App): Observable<App>{
+    return this.http.put(`${this.API_URI}/apps/${Carnet}`, updatedUsuario);
   }
 
   //PUBLICACIONES
@@ -47,6 +49,15 @@ export class AppsService {
   savePublicacion(publicacion: Publicacion){
     return this.http.post('http://localhost:3000/api/Publicacion/', publicacion);
   }
+   
+  guardarCurso(curso:CursoAprobado){
+    return this.http.post(`${this.API_URI}/CursosAprobados/`, curso);
+  }
+  
+  
+
+  
+
 
   //VALIDACIONES
   getCodigoCurso(){
@@ -87,3 +98,34 @@ export class AppsService {
     return this.http.get(this.API_URI + "/Filtros/Catedratico/Nombre/" + catedratico)
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

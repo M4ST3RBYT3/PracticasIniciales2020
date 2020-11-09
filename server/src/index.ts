@@ -10,6 +10,9 @@ import publicacionesRoutes from './routes/publicacionesRoutes';
 import consultasPublicacionesRoutes from './routes/consultaPublicacionRoutes';
 import comentariosRoutes from './routes/comentariosRoutes';
 import filtrosRoutes from   './routes/filtrosRoutes';
+import cursosAprobadosRoutes from './routes/cursosAprobadosRoutes';
+
+
 
 class Server{
     // inicializar express
@@ -37,6 +40,8 @@ class Server{
         this.app.use('/api/Extra', consultasPublicacionesRoutes);
         this.app.use('/api/Comentarios', comentariosRoutes);
         this.app.use('/api/Filtros', filtrosRoutes);
+        this.app.use('/api/CursosAprobados',cursosAprobadosRoutes);
+
     }
     //iniciar el servidor, que el servidor escuche
     start(): void{

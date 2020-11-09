@@ -2,7 +2,6 @@ import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppListComponent} from './components/app-list/app-list.component';
-
 import { CursosComponent } from './components/cursos/cursos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
@@ -10,6 +9,7 @@ import { ModificarComponent } from './components/modificar/modificar.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
+import { PensumComponent } from './components/pensum/pensum.component';
 
 
 const routes: Routes = [
@@ -23,15 +23,20 @@ const routes: Routes = [
     component: AppListComponent
   },
   {
+
     path: 'Publicacion/Cursos',
     component: CursosComponent
   },
   {
-    path: 'Perfil',
+    path: 'Publicacion/Perfil/Cursos/:Carnet',
+    component: CursosComponent
+  },
+  {
+    path: 'Publicacion/Perfil',
     component: PerfilComponent
   },
   {
-    path: 'Perfil/Modificar',
+    path: 'Publicacion/Perfil/Modificar/:Carnet',
     component: ModificarComponent
   },
   {
@@ -42,6 +47,10 @@ const routes: Routes = [
   {
     path: 'Publicacion/Comentario/:id',
     component: ComentariosComponent
+  },
+  {
+    path: 'Publicacion/Perfil/Pensum',
+    component: PensumComponent
   }
 ];
 

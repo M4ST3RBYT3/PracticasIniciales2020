@@ -15,7 +15,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
-
+import { PensumComponent } from './components/pensum/pensum.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
     ModificarComponent,
     PublicacionComponent,
     ComentariosComponent,
+    PensumComponent
   ],
   imports: [
     BrowserModule,

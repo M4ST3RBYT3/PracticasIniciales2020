@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppsService} from '../../services/apps.service';
+import { App } from 'src/app/models/App'
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  apps: any = [];
 
-  ngOnInit(): void {
+  constructor(private appsService: AppsService) { }
+
+  ngOnInit() {
+    this.appsService.getUsuarios().subscribe(
+      res => {
+        this.apps=res;
+      },
+      err => console.log(err)
+    );
   }
 
 }
