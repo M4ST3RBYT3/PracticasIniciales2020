@@ -16,7 +16,7 @@ export class CursosComponent implements OnInit {
     CarnetU:201904025,
     CursoP:"",
     NotaAprobada:0
-  };  
+  }  
 
 
   constructor(private appsService: AppsService, private router: Router) { }
@@ -26,7 +26,7 @@ export class CursosComponent implements OnInit {
   }
 
   cargarCurso(){
-    console.log("hola");
+    console.log(this.curso);
     this.appsService.guardarCurso(this.curso).subscribe(
       res => {
         console.log(res);
