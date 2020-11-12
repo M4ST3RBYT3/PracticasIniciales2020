@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6"></div>
                 <div class="col-md-4">
-                    <p>Fecha de publicacion: {{publicacion.Fecha | date: 'yyyy-MM-dd'}}</p>
+                    <p>Fecha de publicacion: {{publicacion.Fecha | date: 'dd-MM-yyyy'}}</p>
                 </div>
             </div>
         </div>
@@ -50,6 +50,9 @@
             </div>
             <div class="row">
                 <p>Mensaje: {{publicacion.Mensaje}}</p>
+            </div>
+            <div class="row">
+                <span ng-init="a = 1">{{ a }}</span>
             </div>
             <div class="row">
                 <div class="col-md-2"></div>

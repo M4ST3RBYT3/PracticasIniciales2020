@@ -13,6 +13,7 @@ class PublicacionesRoutes {
         this.router.get('/', publicacionesController.listarPublicaciones);
         this.router.get('/:id', publicacionesController.getPublicacion);
         this.router.post('/', publicacionesController.createPublicacion);
+        this.router.get('/Comentario/:id', publicacionesController.getComentarios)
     }
 }
 

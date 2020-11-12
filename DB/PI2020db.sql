@@ -1,5 +1,5 @@
 --NOMBRE DE LA BASE DE DATOS dbpracticas2020
---GRUPO 4B
+--GRUPO 3
 create TABLE Usuario(
 	Carnet int PRIMARY key not null,
     Nombres varchar(45),

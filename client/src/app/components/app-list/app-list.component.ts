@@ -1,5 +1,5 @@
-import { renderFlagCheckIfStmt } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
+
 import { Publicacion } from '../../models/Publicacion';
 import { AppsService } from '../../services/apps.service';
 
@@ -11,6 +11,7 @@ import { AppsService } from '../../services/apps.service';
 export class AppListComponent implements OnInit {
 
   publicaciones: any = []
+  cantidad: any = []
 
   paramsfiltro: Publicacion ={
     Mensaje: '',
@@ -25,6 +26,16 @@ export class AppListComponent implements OnInit {
         this.publicaciones = res;
       },
       err => console.error(err)
+    );
+  }
+
+  countComentarios(id: string){
+    console.log(id)
+    this.appsService.getCountComentaios(id).subscribe(
+      res => {
+        this.cantidad = res;
+      },
+      err => console.log(err)
     );
   }
 

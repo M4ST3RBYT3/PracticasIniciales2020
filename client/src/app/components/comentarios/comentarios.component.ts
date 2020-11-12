@@ -19,7 +19,7 @@ export class ComentariosComponent implements OnInit {
 
   publicacion: Publicacion ={
     Mensaje: '',
-    Usuario_Carnet: 0,
+    Usuario_Carnet: 201903838,
     Curso_Catedratico_idCatedraticoCurso: 0,
     Curso_CodigoCurso: 0,
     Catedratico_NoCatedratico: 0,
@@ -30,7 +30,7 @@ export class ComentariosComponent implements OnInit {
   comentario: Comentario ={
     Mensaje: '',
     Publicacion_idPublicacion: null,
-    Usuario_Carnet: 201904025,
+    Usuario_Carnet: 201903838,
   }
 
   constructor(private activedRoute: ActivatedRoute, private appsService: AppsService) { }

@@ -33,8 +33,8 @@ export class AppsService {
     return this.http.post('http://localhost:3000/api/apps', usuario);
   }
 
-  updateUsuario(Carnet: number, updatedUsuario:App): Observable<App>{
-    return this.http.put(`${this.API_URI}/apps/${Carnet}`, updatedUsuario);
+  updateUsuario(id, updatedUsuario): Observable<App>{ 
+    return this.http.put('http://localhost:3000/api/apps/', updatedUsuario);
   }
 
   //PUBLICACIONES
@@ -105,7 +105,10 @@ export class AppsService {
     return this.http.get(this.API_URI + "/Filtros/Catedratico/Nombre/" + catedratico)
   }
 
-  
+  //CANTIDAD COMENTARIOS
+  getCountComentaios(id: string){
+    return this.http.get(this.API_URI + '/Publicacion/Comentario/' + id)
+  }  
 
   
 }

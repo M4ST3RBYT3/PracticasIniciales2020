@@ -15,6 +15,7 @@ class PublicacionesRoutes {
         this.router.get('/', publicacionController_1.default.listarPublicaciones);
         this.router.get('/:id', publicacionController_1.default.getPublicacion);
         this.router.post('/', publicacionController_1.default.createPublicacion);
+        this.router.get('/Comentario/:id', publicacionController_1.default.getComentarios);
     }
 }
 const publicacionesRoutes = new PublicacionesRoutes();
