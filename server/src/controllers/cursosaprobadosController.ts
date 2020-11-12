@@ -18,6 +18,11 @@ class CursosAprobadosController{
         //res.json({message: 'Curso OK'});
     }
 
+ 
+
+
+    
+
     //SELECT curso.CodigoCurso, curso.Nombre, pensumsistemas.idCursoPensum
     //FROM pensumsistemas
     //INNER JOIN curso on curso.CodigoCurso = pensumsistemas.Curso_CodigoCurso
@@ -26,7 +31,13 @@ class CursosAprobadosController{
     //FROM CursosAprobados
     //INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP
     //INNER JOIN curso on curso.CodigoCurso = pensumsistemas.Curso_CodigoCurso
-    
+
+    //CREDITOS
+    //SELECT pensumsistemas.Creditos FROM cursosaprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP WHERE CarnetU = 201904025
+
+    //Suma Creditos
+    //SELECT SUM(Creditos) FROM cursosaprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP WHERE CarnetU =201904025
+    //SELECT SUM(Creditos) AS Creditos FROM cursosaprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP WHERE CarnetU =201904025
 }
 
 const cursosaprobadosController = new CursosAprobadosController();

@@ -2,11 +2,15 @@
     <div class="card-body">
         <label for="modificarnombre" style="margin-left: 400px;  background: rgb(153, 190, 204)  ;padding: 10px;">CURSOS APROBADOS</label><br><br>
         <br>
-        <div style="width: 250px; height: 200px; float: left;" *ngFor="let lista of listaCursosAprobados">
-            <div style="background:rgb(181, 243, 222);width: 200px; padding: 4px;">
+        <div style="width: 800px; height: 100px; float: left;" *ngFor="let lista of listaCursosAprobados">
+            <div style="background:rgb(181, 243, 222);width: 700px; padding: 4px;">
                <p>CURSO:  {{lista.Nombre}}</p><p>NOTA APROBADA: {{lista.NotaAprobada}}</p>
             </div><br>
         </div>
+        <div *ngFor="let total of listaCreditos">
+            <label  style="background:rgb(181, 243, 222);width: 150px; height: 80px; padding: 4px;">CREDITOS APROBADOS: {{total.Creditos}}</label>            
+        </div>
+       
         
     </div>
 </div>

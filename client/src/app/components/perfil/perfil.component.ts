@@ -12,6 +12,7 @@ export class PerfilComponent implements OnInit {
 
   apps: any = [];
   listaCursosAprobados: any = [];
+  listaCreditos:any=[];
 
   curso:CursoAprobado = {
     CarnetU:201904025,
@@ -30,7 +31,21 @@ export class PerfilComponent implements OnInit {
       },
       err => console.log(err)
     );
+    
+    this.appsService.getCreditosAprobados(this.curso.CarnetU).subscribe(
+      res => {
+        this.listaCreditos = res;
+        console.log(this.listaCreditos);
+      },
+      err => console.log(err)
+    );
 
+    this.appsService.getCursoAprobado(this.curso.CarnetU).subscribe(
+      res => {
+        this.listaCursosAprobados = res;
+      },
+      err => console.log(err)
+    );
   
   }
 
