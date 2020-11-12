@@ -23,7 +23,7 @@ export class CursosComponent implements OnInit {
 
 
   ngOnInit(): void {
-  this.appsService.getCodigoCurso().subscribe(
+  this.appsService.cargarPensum().subscribe(
     res => {
       this.listaCursos = res;
     },
@@ -44,6 +44,7 @@ export class CursosComponent implements OnInit {
   }
 
   setearCurso(id:number){
+    console.log(id);
     this.curso.CursoP=id;
   }
 }

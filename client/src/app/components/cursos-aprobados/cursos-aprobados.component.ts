@@ -24,7 +24,7 @@ export class CursosAprobadosComponent implements OnInit {
 
   ngOnInit() {
     
-    this.appsService.getCursoAprobado(201904025).subscribe(
+    this.appsService.getCursoAprobado(this.curso.CarnetU).subscribe(
       res => {
         this.listaCursosAprobados=res;
       },

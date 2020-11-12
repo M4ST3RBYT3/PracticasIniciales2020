@@ -54,16 +54,16 @@ export class AppsService {
     return this.http.post(`${this.API_URI}/CursosAprobados/`, curso);
   }
   
+  //GET CURSO VINCULADA CON PENSUMSISTEMAS
   cargarPensum(){
     return this.http.get(this.API_URI+'/Cursos');
   }
   
   //Cursos Aprobados
-  getCursoAprobado(Carnet:number){
-    return this.http.get(this.API_URI+'/CursosAprobados/'+Carnet);
+  getCursoAprobado(Carnet : number){
+    return this.http.get(this.API_URI+'/CursosAprobados/' + Carnet);
   }
   
-
 
   //VALIDACIONES
   getCodigoCurso(){
@@ -105,6 +105,7 @@ export class AppsService {
     return this.http.get(this.API_URI + "/Filtros/Catedratico/Nombre/" + catedratico)
   }
 
+  
 
   
 }
