@@ -1,5 +1,5 @@
 export interface CursoAprobado{
     CarnetU?: number;
-    CursoP?: string;
+    CursoP?: number;
     NotaAprobada?: number;
 }

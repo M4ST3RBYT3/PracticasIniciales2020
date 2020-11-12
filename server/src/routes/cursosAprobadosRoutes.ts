@@ -11,6 +11,7 @@ class CursosaprobadosRoutes {
     config(): void{
 
         this.router.post('/', cursosaprobadosController.create);
+        this.router.get('/:Carnet', cursosaprobadosController.getCursoAprobado);
     
     }
 }

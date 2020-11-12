@@ -16,6 +16,7 @@ import { ModificarComponent } from './components/modificar/modificar.component';
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { PensumComponent } from './components/pensum/pensum.component';
+import { CursosAprobadosComponent } from './components/cursos-aprobados/cursos-aprobados.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PensumComponent } from './components/pensum/pensum.component';
     ModificarComponent,
     PublicacionComponent,
     ComentariosComponent,
-    PensumComponent
+    PensumComponent,
+    CursosAprobadosComponent
   ],
   imports: [
     BrowserModule,

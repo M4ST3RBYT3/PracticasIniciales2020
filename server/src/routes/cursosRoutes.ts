@@ -11,6 +11,7 @@ class cursosRoutes {
     config(): void{
         //RUTAS PARA PUBLICACIONES
         this.router.post('/', cursoController.create);
+        this.router.get('/', cursoController.getPensum);
     }
 }
 

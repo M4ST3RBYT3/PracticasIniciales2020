@@ -12,6 +12,7 @@ class CursosaprobadosRoutes {
     }
     config() {
         this.router.post('/', cursosaprobadosController_1.default.create);
+        this.router.get('/:Carnet', cursosaprobadosController_1.default.getCursoAprobado);
     }
 }
 const cursosaprobadosroutes = new CursosaprobadosRoutes();

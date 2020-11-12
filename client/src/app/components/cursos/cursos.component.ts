@@ -10,11 +10,11 @@ import { Route,Router } from '@Angular/router';
 })
 export class CursosComponent implements OnInit {
 
-  apps: any = [];
+  listaCursos: any = [];
   
   curso:CursoAprobado = {
     CarnetU:201904025,
-    CursoP:"",
+    CursoP:0,
     NotaAprobada:0
   }  
 
@@ -23,6 +23,13 @@ export class CursosComponent implements OnInit {
 
 
   ngOnInit(): void {
+  this.appsService.getCodigoCurso().subscribe(
+    res => {
+      this.listaCursos = res;
+    },
+    err => console.error(err)
+  );
+  
   }
 
   cargarCurso(){
@@ -34,6 +41,10 @@ export class CursosComponent implements OnInit {
       },
       err => console.log(err)
     )
+  }
+
+  setearCurso(id:number){
+    this.curso.CursoP=id;
   }
 }
 

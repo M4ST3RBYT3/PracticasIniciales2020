@@ -11,6 +11,8 @@ import consultasPublicacionesRoutes from './routes/consultaPublicacionRoutes';
 import comentariosRoutes from './routes/comentariosRoutes';
 import filtrosRoutes from   './routes/filtrosRoutes';
 import cursosAprobadosRoutes from './routes/cursosAprobadosRoutes';
+import cursosRoutes from  './routes/cursosRoutes';
+//import from './routes/'
 
 
 
@@ -40,6 +42,7 @@ class Server{
         this.app.use('/api/Extra', consultasPublicacionesRoutes);
         this.app.use('/api/Comentarios', comentariosRoutes);
         this.app.use('/api/Filtros', filtrosRoutes);
+        this.app.use('/api/Cursos',cursosRoutes);
         this.app.use('/api/CursosAprobados',cursosAprobadosRoutes);
 
     }

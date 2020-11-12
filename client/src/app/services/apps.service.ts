@@ -54,8 +54,14 @@ export class AppsService {
     return this.http.post(`${this.API_URI}/CursosAprobados/`, curso);
   }
   
+  cargarPensum(){
+    return this.http.get(this.API_URI+'/Cursos');
+  }
   
-
+  //Cursos Aprobados
+  getCursoAprobado(Carnet:number){
+    return this.http.get(this.API_URI+'/CursosAprobados/'+Carnet);
+  }
   
 
 
@@ -71,6 +77,7 @@ export class AppsService {
   getCatedraticoCurso(){
     return this.http.get(this.API_URI + "/Extra/CatedraticoCurso/");
   }
+
 
   //COMENTARIO
   getComentarios(id: string){
@@ -97,6 +104,9 @@ export class AppsService {
   getCatedraticoNombre(catedratico: string){
     return this.http.get(this.API_URI + "/Filtros/Catedratico/Nombre/" + catedratico)
   }
+
+
+  
 }
 
 

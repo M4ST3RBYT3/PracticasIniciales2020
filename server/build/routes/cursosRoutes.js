@@ -13,6 +13,7 @@ class cursosRoutes {
     config() {
         //RUTAS PARA PUBLICACIONES
         this.router.post('/', cursosController_1.default.create);
+        this.router.get('/', cursosController_1.default.getPensum);
     }
 }
 const cursosruotes = new cursosRoutes();

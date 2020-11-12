@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+        <label for="modificarnombre" style="margin-left: 400px;  background: rgb(153, 190, 204)  ;padding: 10px;">CURSOS APROBADOS</label><br><br>
+        <br>
+        <div style="width: 250px; height: 200px; float: left;" *ngFor="let lista of listaCursosAprobados">
+            <div style="background:rgb(181, 243, 222);width: 200px; padding: 4px;">
+                <p>CURSO:  {{lista.CursoP}}</p><p>NOTA APROBADA: {{lista.NotaAprobada}}</p>
+            </div><br>
+        </div>
+        
+    </div>
+</div>

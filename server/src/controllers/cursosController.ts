@@ -7,6 +7,10 @@ class CursosController{
         await pool.query('insert into Curso set ?', [req.body]);
         res.json({message: 'Curso Ingresado'});
     }
+    public async getPensum(req: Request, res: Response){
+        const curso = await pool.query('SELECT * FROM curso');
+        res.json(curso);
+      }
 
 }
 

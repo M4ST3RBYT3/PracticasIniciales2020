@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppsService} from '../../services/apps.service';
 
 @Component({
   selector: 'app-pensum',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PensumComponent implements OnInit {
 
-  constructor() { }
+  listaPensum:any=[];
 
-  ngOnInit(): void {
+  constructor(private appsService: AppsService) { }
+
+  ngOnInit(){
+    this.appsService.cargarPensum().subscribe(
+      res => {
+        this.listaPensum=res;
+      },
+      err => console.log(err)
+    );
+  
   }
 
 }

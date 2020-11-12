@@ -20,6 +20,12 @@ class CursosController {
             res.json({ message: 'Curso Ingresado' });
         });
     }
+    getPensum(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const curso = yield database_1.default.query('SELECT * FROM curso');
+            res.json(curso);
+        });
+    }
 }
 const cursoController = new CursosController();
 exports.default = cursoController;

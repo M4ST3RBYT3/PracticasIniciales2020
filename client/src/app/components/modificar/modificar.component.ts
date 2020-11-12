@@ -10,7 +10,7 @@ import { App } from 'src/app/models/App'
 })
 export class ModificarComponent implements OnInit {
 
-apps: any = [];
+modi: any = [];
 
 app: App = {
 Carnet: 201904025,
@@ -23,7 +23,15 @@ contrasena: 'anitabb'
   constructor(private appsService: AppsService, private router: Router) { }
 
     ngOnInit() {
+      this.appsService.getUsuarios().subscribe(
+        res => {
+          this.modi=res;
+        },
+        err => console.log(err)
+      );
+
     }
+
     updateUsuario(){
   
       console.log(this.app);

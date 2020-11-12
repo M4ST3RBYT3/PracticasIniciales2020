@@ -20,6 +20,15 @@ class CursosAprobadosController {
             res.json({ message: 'Curso Ingresado' });
         });
     }
+    getCursoAprobado(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { Carnet } = req.params;
+            yield database_1.default.query('SELECT * FROM CursosAprobados WHERE CarnetU = ?', [req.body, Carnet]);
+            //await pool.query('UPDATE Usuario set ? where Carnet = ?', [req.body, Carnet]);
+            //res.json(curso);
+            res.json({ message: 'Curso OK' });
+        });
+    }
 }
 const cursosaprobadosController = new CursosAprobadosController();
 exports.default = cursosaprobadosController;

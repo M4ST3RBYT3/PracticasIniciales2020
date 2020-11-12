@@ -1,8 +1,13 @@
 <div class="card">
     <div class="card-body">
         <label for="modificarnombre" style="margin-left: 400px;  background: rgb(153, 190, 204)  ;padding: 10px;">CARGAR CURSOS</label><br>
-<label for="CURSOS" style="margin-right: 30px;"style="margin: 10px;">NOMBRE DEL CURSO</label><br>
-<input class="form-control mr-sm-2" type="write" [(ngModel)]="curso.CursoP" placeholder="Nombre Curso" aria-label="NOMBRE CURSO" style="width: 450px;">
+<label for="CURSOS" style="margin-right: 30px;"style="margin: 10px;">SELECCIONE EL CURSO</label><br>
+<select class="form-control" style="margin-right: 20px; margin-bottom: 8px;" (change)="setearCurso($event.target.value)">
+    <option>Curso</option>
+    <option *ngFor="let curso of listaCursos" value={{curso.CodigoCurso}} >
+      {{curso.Nombre}}
+    </option>
+  </select>
 <br>
 <label for="CURSOS" style="margin-right: 30px;"style="margin: 10px;">NOTA</label><br>
 <input class="form-control mr-sm-2" type="write" [(ngModel)]="curso.NotaAprobada" placeholder="Nota " aria-label="Nota" style="width: 100px;" maxlength="3">

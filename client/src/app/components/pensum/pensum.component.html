@@ -3,8 +3,11 @@
         <label for="modificarnombre" style="margin-left: 400px;  background: rgb(153, 190, 204)  ;padding: 10px;">PENSUM INGENIERIA EN SISTEMAS</label><br><br>
         <label for="cursosporcursar" style= "margin-left: 0px; background: whitesmoke; padding: 10px">CURSOS QUE FALTAN POR CURSAR EN LA CARRERA</label><br>
         <br>
-        <div style="background:rgb(181, 243, 222);width: 150px; padding: 8px;">
-            <p>Introduccion a la programacion 2</p><p>Creditos: 5</p><p>Prerrequisitos: 101</p>
+        <div style="width: 250px; height: 200px; float: left;" *ngFor="let pensum of listaPensum">
+            <div style="background:rgb(181, 243, 222);width: 200px; padding: 4px;">
+                <p>{{pensum.Nombre}}</p><p>CodigoCurso:{{pensum.CodigoCurso}}</p>
+            </div><br>
         </div>
+        
     </div>
 </div>

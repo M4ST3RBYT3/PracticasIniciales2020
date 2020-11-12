@@ -10,7 +10,7 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
 
 import { PublicacionComponent } from './components/publicacion/publicacion.component';
 import { PensumComponent } from './components/pensum/pensum.component';
-
+import { CursosAprobadosComponent } from './components/cursos-aprobados/cursos-aprobados.component';
 
 const routes: Routes = [
   {
@@ -51,7 +51,12 @@ const routes: Routes = [
   {
     path: 'Publicacion/Perfil/Pensum',
     component: PensumComponent
+  },
+  {
+    path: 'Publicacion/Perfil/CursosAprobados/:Carnet',
+    component: CursosAprobadosComponent
   }
+
 ];
 
 @NgModule({

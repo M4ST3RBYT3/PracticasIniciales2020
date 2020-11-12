@@ -30,7 +30,7 @@ export class ComentariosComponent implements OnInit {
   comentario: Comentario ={
     Mensaje: '',
     Publicacion_idPublicacion: null,
-    Usuario_Carnet: 201908325,
+    Usuario_Carnet: 201904025,
   }
 
   constructor(private activedRoute: ActivatedRoute, private appsService: AppsService) { }
