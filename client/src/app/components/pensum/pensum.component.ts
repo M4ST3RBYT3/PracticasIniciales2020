@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AppsService} from '../../services/apps.service';
+import { AppsService } from '../../services/apps.service';
+import { App } from 'src/app/models/App';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pensum',
@@ -8,18 +10,28 @@ import { AppsService} from '../../services/apps.service';
 })
 export class PensumComponent implements OnInit {
 
-  listaPensum:any=[];
+  listaPensum: any = [];
+  app: App = {
+    Carnet: 0,
+    Nombres: '',
+    Apellidos: '',
+    correo: '',
+    contrasena: 'anitabb'
+  }
 
-  constructor(private appsService: AppsService) { }
+  constructor(private activedRoute: ActivatedRoute, private appsService: AppsService) { }
 
-  ngOnInit(){
-    this.appsService.cargarPensum().subscribe(
+  ngOnInit() {
+    const params = this.activedRoute.snapshot.params;
+    this.app.Carnet = params.Carnet;
+    console.log(this.app);
+    this.appsService.cargarPensum(params.Carnet).subscribe(
       res => {
-        this.listaPensum=res;
+        this.listaPensum = res;
       },
       err => console.log(err)
     );
-  
+
   }
 
 }

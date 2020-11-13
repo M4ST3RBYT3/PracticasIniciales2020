@@ -55,8 +55,8 @@ export class AppsService {
   }
 
   //GET CURSO VINCULADA CON PENSUMSISTEMAS
-  cargarPensum() {
-    return this.http.get(this.API_URI + '/Cursos');
+  cargarPensum(Carnet:number) {
+    return this.http.get(this.API_URI + '/Cursos/'+Carnet);
   }
 
   //Cursos Aprobados

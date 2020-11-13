@@ -24,6 +24,7 @@ class CursosController {
         return __awaiter(this, void 0, void 0, function* () {
             const curso = yield database_1.default.query('SELECT pensumsistemas.idCursoPensum, curso.Nombre, curso.CodigoCurso FROM curso INNER JOIN pensumsistemas on pensumsistemas.Curso_CodigoCurso= curso.CodigoCurso');
             res.json(curso);
+            //ver pensum general
         });
     }
 }

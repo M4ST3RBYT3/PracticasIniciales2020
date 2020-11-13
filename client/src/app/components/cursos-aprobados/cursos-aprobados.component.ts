@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppsService } from '../../services/apps.service';
 //import { App } from 'src/app/models/App'
 import { CursoAprobado } from '../../models/CursoAprobado';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cursos-aprobados',
@@ -22,36 +23,27 @@ export class CursosAprobadosComponent implements OnInit {
   };
 
 
-  constructor(private appsService: AppsService) { }
+  constructor(private activedRoute: ActivatedRoute,private appsService: AppsService) { }
 
 
   ngOnInit() {
-
-    this.appsService.getCursoAprobado(this.curso.CarnetU).subscribe(
+    const params = this.activedRoute.snapshot.params;
+    this.curso.CarnetU = params.Carnet;
+    console.log(this.curso);
+    this.appsService.getCursoAprobado(params.Carnet).subscribe(
       res => {
         this.listaCursosAprobados = res;
       },
       err => console.log(err)
     );
 
-    this.appsService.getCreditosAprobados(this.curso.CarnetU).subscribe(
+    this.appsService.getCreditosAprobados(params.Carnet).subscribe(
       res => {
         this.listaCreditos = res;
         console.log(this.listaCreditos);
       },
       err => console.log(err)
     );
-
- //   this.appsService.getCreditosSum(this.curso.CarnetU).subscribe(
-    //res2 =>{
-      //this.listaCreditosSum = res2;
-     // console.log("Chayanne "+this.listaCreditosSum);
-     // for (let i of this.listaCreditosSum) this.total +=i;
-      //console.log("La suma es "+this.total);
-    //},
-    //err => console.log(err)
-    //);
-
   }
 
 }

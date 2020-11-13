@@ -17,7 +17,7 @@ class CursosRestantesController {
     getCursosRestantes(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Carnet } = req.params;
-            const curso = yield database_1.default.query('SELECT CursosAprobados.NotaAprobada, curso.Nombre, curso.CodigoCurso FROM CursosAprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP INNER JOIN curso on curso.CodigoCurso = pensumsistemas.Curso_CodigoCurso where CarnetU = 201904025');
+            const curso = yield database_1.default.query('SELECT cursosaprobados.*, curso.* FROM cursosaprobados  RIGHT JOIN curso  ON cursosaprobados.CursoP=curso.CodigoCurso  WHERE cursosaprobados.CursoP is null');
             res.json(curso);
         });
     }

@@ -10,6 +10,7 @@ class CursosController{
     public async getPensum(req: Request, res: Response){
         const curso = await pool.query('SELECT pensumsistemas.idCursoPensum, curso.Nombre, curso.CodigoCurso FROM curso INNER JOIN pensumsistemas on pensumsistemas.Curso_CodigoCurso= curso.CodigoCurso');
         res.json(curso);
+        //ver pensum general
     }
 
     //SELECT pensumsistemas.idCursoPensum, curso.Nombre, curso.CodigoCurso

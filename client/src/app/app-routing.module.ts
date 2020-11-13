@@ -49,7 +49,7 @@ const routes: Routes = [
     component: ComentariosComponent
   },
   {
-    path: 'Publicacion/Perfil/Pensum',
+    path: 'Publicacion/Perfil/Pensum/:Carnet',
     component: PensumComponent
   },
   {

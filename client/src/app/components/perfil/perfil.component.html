@@ -5,7 +5,7 @@
             <div style="width: 1000px; align-items: center;">
                 <a [routerLink]="['/Publicacion/Perfil/Modificar',apps.Carnet]" class="button" type="submit"
                     routerLinkActive="active" style="float: left;">Modificar Perfil</a>
-                <a routerLink="/Publicacion/Perfil/Pensum" class="button" type="submit" routerLinkActive="active"
+                <a [routerLink]="['/Publicacion/Perfil/Pensum',apps.Carnet]" class="button" type="submit" routerLinkActive="active"
                     style="margin-left: 20px; float: left ; ">Ver Pensum</a>
                 <button [routerLink]="['/Publicacion/Perfil/Cursos',apps.Carnet]" class="button"
                     style="margin-left: 20px; float: left; ">Cargar Cursos</button><br>
