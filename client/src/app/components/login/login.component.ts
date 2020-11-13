@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router } from '@angular/router';
 import { Usuario } from './../../models/usuario.model';
 import { Component, OnInit } from '@angular/core';
 import { AppsService } from 'src/app/services/apps.service';
@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
     DatosCorrectos: false
   };
   constructor(
-    public appservice: AppsService) {
+    public appservice: AppsService,
+    private route: Router) {
       this.usuarioRegistro = new Usuario();
      }
 
@@ -34,14 +35,17 @@ export class LoginComponent implements OnInit {
   registro(){
     this.appservice.saveUsuario(this.usuarioRegistro).subscribe((data) => {
         console.log(data);
+        this.route.navigate(['/']);
     });
   }
 
   login(){
-    this.appservice.getUsuario(this.credenciales.Carnet).subscribe((data: any) => {
-      console.log(data)
+    this.appservice.getUsuarioPB(this.credenciales.Carnet).subscribe((data: any) => {
+      this.credenciales.Carnet = Number(this.credenciales.Carnet)
       if (data.Carnet === this.credenciales.Carnet && data.contrasena === this.credenciales.Contrasena){
+        console.log(data)
         localStorage.setItem('carnetLogeado', data.Carnet);
+        this.route.navigate(['/Publicaciones']);
       }
     });
   }
@@ -50,6 +54,7 @@ export class LoginComponent implements OnInit {
     this.appservice.getUsuario(this.recuperacion.Carnet).subscribe((data: any) => {
       console.log(data)
       console.log(this.recuperacion)
+      this.recuperacion.Carnet = Number(this.recuperacion.Carnet)
       if (data.Carnet === (this.recuperacion.Carnet) && data.correo === this.recuperacion.Correo){
         console.log("Entra?")
         this.recuperacion.DatosCorrectos = true;
@@ -58,6 +63,7 @@ export class LoginComponent implements OnInit {
         this.URecuperacion.Nombres = data.Nombres;
         this.URecuperacion.Apellidos = data.Apellidos;
         this.URecuperacion.Contrasena = data.contrasena;
+        this.route.navigate(['/']);
       }
     });
   }
