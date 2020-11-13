@@ -17,7 +17,7 @@ class CreditosAprobadosController {
     getCreditos(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Carnet } = req.params;
-            const hola = yield database_1.default.query('SELECT SUM(Creditos) AS Creditos FROM cursosaprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP WHERE CarnetU =201904025');
+            const hola = yield database_1.default.query('SELECT SUM(Creditos) AS Creditos FROM cursosaprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP WHERE CarnetU = ' + Carnet);
             res.json(hola);
         });
     }

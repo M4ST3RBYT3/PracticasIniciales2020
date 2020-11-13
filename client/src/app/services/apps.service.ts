@@ -21,8 +21,8 @@ export class AppsService {
     return this.http.get(this.API_URI + '/apps');
   }
 
-  getUsuario(Carnet: number) {
-    return this.http.get(`${this.API_URI}/apps/${Carnet}`);
+  getUsuario(id: string) {
+    return this.http.get(this.API_URI + '/apps/' + id);
   }
 
   deleteUsuario(id: string) {

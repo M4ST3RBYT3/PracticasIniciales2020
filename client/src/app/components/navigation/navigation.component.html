@@ -4,6 +4,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a routerLink="Publicacion/Perfil" class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLinkActive="active"style = "margin-left: 75%">Perfil</a>
+      <a [routerLink]="['/Publicacion/Perfil',apps.Carnet]" class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLinkActive="active"style = "margin-left: 75%">Perfil</a>
+      <!-- routerLink="/Publicacion/Perfil"    [routerLink]="['/Publicacion/Perfil',app.Carnet]"-->
   </div>
 </nav>

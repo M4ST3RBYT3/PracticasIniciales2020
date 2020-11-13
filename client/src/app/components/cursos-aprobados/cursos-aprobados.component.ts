@@ -16,7 +16,7 @@ export class CursosAprobadosComponent implements OnInit {
   listaCreditosSum: any = [];
 
   curso: CursoAprobado = {
-    CarnetU: 201904025,
+    CarnetU: 0,
     CursoP: 0,
     NotaAprobada: 0
   };

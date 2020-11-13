@@ -32,7 +32,7 @@ const routes: Routes = [
     component: CursosComponent
   },
   {
-    path: 'Publicacion/Perfil',
+    path: 'Publicacion/Perfil/:Carnet',
     component: PerfilComponent
   },
   {

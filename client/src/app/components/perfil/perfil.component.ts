@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AppsService} from '../../services/apps.service';
 import { App } from 'src/app/models/App'
 import { CursoAprobado } from '../../models/CursoAprobado';
@@ -20,19 +21,31 @@ export class PerfilComponent implements OnInit {
     NotaAprobada:0
   }  
 
+  user:App = {
+    Carnet:201904025,
+    Nombres:"",
+    Apellidos:"",
+    contrasena:"",
+    correo:""
+  }
+
   
 
-  constructor(private appsService: AppsService) { }
+  constructor(private appsService: AppsService, private activedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.appsService.getUsuarios().subscribe(
+  ngOnInit(): void {   
+    const params = this.activedRoute.snapshot.params;
+    this.appsService.getUsuario(params.Carnet).subscribe(
       res => {
+        console.log(res);
         this.apps=res;
       },
       err => console.log(err)
     );
-    
-    this.appsService.getCreditosAprobados(this.curso.CarnetU).subscribe(
+
+
+
+    this.appsService.getCreditosAprobados(params.Carnet).subscribe(
       res => {
         this.listaCreditos = res;
         console.log(this.listaCreditos);
@@ -40,7 +53,7 @@ export class PerfilComponent implements OnInit {
       err => console.log(err)
     );
 
-    this.appsService.getCursoAprobado(this.curso.CarnetU).subscribe(
+    this.appsService.getCursoAprobado(params.Carnet).subscribe(
       res => {
         this.listaCursosAprobados = res;
       },
@@ -48,5 +61,6 @@ export class PerfilComponent implements OnInit {
     );
   
   }
+
 
 }

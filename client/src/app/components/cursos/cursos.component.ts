@@ -37,7 +37,7 @@ export class CursosComponent implements OnInit {
     this.appsService.guardarCurso(this.curso).subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/Publicacion/Perfil'])
+        this.router.navigate(['/Publicacion/Perfil/'+this.curso.CarnetU])
       },
       err => console.log(err)
     )

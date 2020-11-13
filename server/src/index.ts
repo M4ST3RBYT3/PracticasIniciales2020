@@ -13,6 +13,7 @@ import filtrosRoutes from   './routes/filtrosRoutes';
 import cursosAprobadosRoutes from './routes/cursosAprobadosRoutes';
 import cursosRoutes from  './routes/cursosRoutes';
 import creditosaprobadosroutes from './routes/creditosAprobadosRoutes';
+import cursosrestantesRoutes from './routes/cursosRestantesRoutes';
 //import from './routes/'
 
 
@@ -46,6 +47,7 @@ class Server{
         this.app.use('/api/Cursos',cursosRoutes);
         this.app.use('/api/CursosAprobados',cursosAprobadosRoutes);
         this.app.use('/api/CreditosAprobados',creditosaprobadosroutes);
+        this.app.use('/api/CursosRestantes',cursosrestantesRoutes)
 
     }
     //iniciar el servidor, que el servidor escuche

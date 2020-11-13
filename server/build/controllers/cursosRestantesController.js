@@ -13,20 +13,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class CursosAprobadosController {
-    create(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO  CursosAprobados set  ?', [req.body]);
-            res.json({ message: 'Curso Ingresado' });
-        });
-    }
-    getCursoAprobado(req, res) {
+class CursosRestantesController {
+    getCursosRestantes(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { Carnet } = req.params;
-            const curso = yield database_1.default.query('SELECT CursosAprobados.NotaAprobada, curso.Nombre, curso.CodigoCurso FROM CursosAprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP INNER JOIN curso on curso.CodigoCurso = pensumsistemas.Curso_CodigoCurso where CarnetU = ' + Carnet);
+            const curso = yield database_1.default.query('SELECT CursosAprobados.NotaAprobada, curso.Nombre, curso.CodigoCurso FROM CursosAprobados INNER JOIN pensumsistemas on pensumsistemas.idCursoPensum = CursosAprobados.CursoP INNER JOIN curso on curso.CodigoCurso = pensumsistemas.Curso_CodigoCurso where CarnetU = 201904025');
             res.json(curso);
         });
     }
 }
-const cursosaprobadosController = new CursosAprobadosController();
-exports.default = cursosaprobadosController;
+const cursosrestantesController = new CursosRestantesController();
+exports.default = cursosrestantesController;

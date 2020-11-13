@@ -1,44 +1,49 @@
 <div class="card">
     <div class="card-body">
-        <div class="col-md-4" *ngFor="let app of apps">
+        <div class="col-md-4">
             <br>
             <div style="width: 1000px; align-items: center;">
-                <a [routerLink]="['/Publicacion/Perfil/Modificar',app.Carnet]" class="button" type="submit"
+                <a [routerLink]="['/Publicacion/Perfil/Modificar',apps.Carnet]" class="button" type="submit"
                     routerLinkActive="active" style="float: left;">Modificar Perfil</a>
                 <a routerLink="/Publicacion/Perfil/Pensum" class="button" type="submit" routerLinkActive="active"
                     style="margin-left: 20px; float: left ; ">Ver Pensum</a>
-                <button [routerLink]="['/Publicacion/Perfil/Cursos',app.Carnet]" class="button"
+                <button [routerLink]="['/Publicacion/Perfil/Cursos',apps.Carnet]" class="button"
                     style="margin-left: 20px; float: left; ">Cargar Cursos</button><br>
             </div>
             <br>
             <br>
             <label for=carnet style="margin-left: 30px; " style="margin-right: 35px;" style="margin: 15px;">Carnet:
-            </label> <input type="text" size="25" maxlength="30" value="{{app.Carnet}}" name="carnettext"
+            </label> <input type="text" size="25" maxlength="30" value="{{apps.Carnet}}" name="carnettext"
                 style="background: rgb(181, 243, 222); margin-left: 18px;" readonly><br>
             <label for=nombre style="margin-left: 20px; " style="margin-right: 30px;" style="margin: 15px;">Nombres:
-            </label> <input type="text" size="25" maxlength="30" value="{{app.Nombres}}" name="nombretext"
+            </label> <input type="text" size="25" maxlength="30" value="{{apps.Nombres}}" name="nombretext"
                 style="background: rgb(181, 243, 222);" readonly><br>
             <label for=apellido style="margin-left: 20px; " style="margin-right: 30px;"
                 style="margin: 15px;">Apellidos:</label><input type="text" size="25" maxlength="30"
-                value="{{app.Apellidos}}" name="apeliidotext" style="background: rgb(181, 243, 222);" readonly><br>
+                value="{{apps.Apellidos}}" name="apeliidotext" style="background: rgb(181, 243, 222);" readonly><br>
             <label for=correo style="margin-left: 20px;  margin-right: 35px; margin: 15px;">Correo:</label><input
-                type="text" size="25" maxlength="40" value="{{app.correo}}" name="correotext"
+                type="text" size="25" maxlength="40" value="{{apps.correo}}" name="correotext"
                 style="margin-left: 17px; background: rgb(181, 243, 222);" readonly><br><br>
             <br>
             <br>
-            <label style = "background: rgb(22, 26, 128); padding: 10px; color: white; ">CUSOS APROBADOS</label>
+            <label style="background: rgb(22, 26, 128); padding: 10px; color: white; ">CUSOS APROBADOS</label>
             <br>
-        </div>
-        
-        <div style="width: 800px; height: 100px; float: left;" *ngFor="let lista of listaCursosAprobados">
-            <div  style="background:rgb(234, 241, 239); border-color:black; width: 700px; padding: 4px;">
-               <p>CURSO:  {{lista.Nombre}}</p><p>NOTA APROBADA: {{lista.NotaAprobada}}</p>
-            </div><br>
-        </div>
-        <div *ngFor="let total of listaCreditos">
-            <label  style="background:rgb(234, 241, 239); border-color:black; width: 150px; height: 80px; padding: 4px;">CREDITOS APROBADOS: {{total.Creditos}}</label>            
-        </div>
+            <div>
+                <h1>{{apps.Carnet}}</h1>
+            </div>
 
+            <div style="width: 800px; height: 100px; float: left;" *ngFor="let lista of listaCursosAprobados">
+                <div style="background:rgb(234, 241, 239); border-color:black; width: 700px; padding: 4px;">
+                    <p>CURSO: {{lista.Nombre}}</p>
+                    <p>NOTA APROBADA: {{lista.NotaAprobada}}</p>
+                </div><br>
+            </div>
+            <div *ngFor="let total of listaCreditos">
+                <label
+                    style="background:rgb(234, 241, 239); border-color:black; width: 150px; height: 80px; padding: 4px;">CREDITOS
+                    APROBADOS: {{total.Creditos}}</label>
+            </div>
+        </div>
         <br>
 
 

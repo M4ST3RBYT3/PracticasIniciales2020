@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppsService} from '../../services/apps.service';
+import { App } from 'src/app/models/App'
 
 @Component({
   selector: 'app-navigation',
@@ -6,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  apps: any = [];
 
-  constructor() { }
+  user:App = {
+    Carnet:201904025,
+    Nombres:"",
+    Apellidos:"",
+    contrasena:"",
+    correo:""
+  }
+
+  constructor(private appsService: AppsService) { }
 
   ngOnInit(): void {
   }

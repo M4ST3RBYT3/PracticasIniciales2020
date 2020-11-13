@@ -18,7 +18,7 @@ export class PublicacionComponent implements OnInit {
 
   publicacion: Publicacion ={
     Mensaje: '',
-    Usuario_Carnet: 201903838,
+    Usuario_Carnet: 201902207,
     Curso_Catedratico_idCatedraticoCurso: 0,
     Curso_CodigoCurso: 0,
     Catedratico_NoCatedratico: 0,

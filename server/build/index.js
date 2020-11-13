@@ -17,6 +17,7 @@ const filtrosRoutes_1 = __importDefault(require("./routes/filtrosRoutes"));
 const cursosAprobadosRoutes_1 = __importDefault(require("./routes/cursosAprobadosRoutes"));
 const cursosRoutes_1 = __importDefault(require("./routes/cursosRoutes"));
 const creditosAprobadosRoutes_1 = __importDefault(require("./routes/creditosAprobadosRoutes"));
+const cursosRestantesRoutes_1 = __importDefault(require("./routes/cursosRestantesRoutes"));
 //import from './routes/'
 class Server {
     constructor() {
@@ -43,6 +44,7 @@ class Server {
         this.app.use('/api/Cursos', cursosRoutes_1.default);
         this.app.use('/api/CursosAprobados', cursosAprobadosRoutes_1.default);
         this.app.use('/api/CreditosAprobados', creditosAprobadosRoutes_1.default);
+        this.app.use('/api/CursosRestantes', cursosRestantesRoutes_1.default);
     }
     //iniciar el servidor, que el servidor escuche
     start() {

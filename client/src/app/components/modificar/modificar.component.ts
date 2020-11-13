@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { AppsService} from '../../services/apps.service';
 import { Route,Router } from '@Angular/router';
 import { App } from 'src/app/models/App'
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-modificar',
   templateUrl: './modificar.component.html',
@@ -13,14 +13,14 @@ export class ModificarComponent implements OnInit {
 modi: any = [];
 
 app: App = {
-Carnet: 201904025,
+Carnet: 0,
 Nombres: '',
 Apellidos: '',
 correo: '',
 contrasena: 'anitabb'
 }
 
-  constructor(private appsService: AppsService, private router: Router) { }
+  constructor(private activedRoute: ActivatedRoute, private appsService: AppsService, private router: Router) { }
 
     ngOnInit() {
       this.appsService.getUsuarios().subscribe(
@@ -33,14 +33,15 @@ contrasena: 'anitabb'
     }
 
     updateUsuario(){
-  
+      const params = this.activedRoute.snapshot.params;
+      this.app.Carnet = params.Carnet;
       console.log(this.app);
-      this.appsService.updateUsuario(this.app.Carnet ,this.app).subscribe(
+      this.appsService.updateUsuario(params.Carnet,this.app).subscribe(
 
         res => {
 
           console.log(res);
-          this.router.navigate(['/Publicacion/Perfil'])
+          this.router.navigate(['/Publicacion/Perfil/'+params.Carnet])
   
         },
         err => console.error(err)
