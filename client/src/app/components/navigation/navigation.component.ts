@@ -21,6 +21,9 @@ export class NavigationComponent implements OnInit {
   constructor(private appsService: AppsService) { }
 
   ngOnInit(): void {
+    this.user.Carnet = Number(localStorage.getItem('carnetLogeado'));
   }
+
+  //DECLARAR UNA FUNCION PARA CAMBIAR DE VISTA CON
 
 }
