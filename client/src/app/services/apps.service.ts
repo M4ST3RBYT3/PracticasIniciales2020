@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { App } from '../models/App';
 import { Publicacion } from '../models/Publicacion';
 import { from, Observable } from 'rxjs';
+import { Usuario } from '../models/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,30 +16,30 @@ export class AppsService {
   constructor(private http: HttpClient) { }
 
   getUsuarios(){
-    return this.http.get(this.API_URI+'/apps');
+    return this.http.get(this.API_URI + '/apps');
   }
 
-  getUsuario(id: string){
-    return this.http.get('http://localhost:3000/api/apps/${id}');
+  getUsuario(id: number){
+    return this.http.get('http://localhost:3000/api/apps/' + id);
   }
 
   deleteUsuario(id: string ){
     return this.http.delete('http://localhost:3000/api/apps/${id}');
   }
-  
-  saveUsuario(usuario: App){
+
+  saveUsuario(usuario: Usuario){
     return this.http.post('http://localhost:3000/api/apps', usuario);
   }
 
-  updateUsuario(id, updatedUsuario): Observable<App>{
-    return this.http.put('http://localhost:3000/api/apps/${id}', updatedUsuario);
+  updateUsuario(id: number, updatedUsuario: Usuario): Observable<App>{
+    return this.http.put('http://localhost:3000/api/apps/' + id, updatedUsuario);
   }
 
   //PUBLICACIONES
   getPublicacion(id: string){
     return this.http.get(this.API_URI + '/Publicacion/' + id);
   }
-  
+
   getPublicaciones(){
     return this.http.get(this.API_URI + '/Publicacion');
   }
