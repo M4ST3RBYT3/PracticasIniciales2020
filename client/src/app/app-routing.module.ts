@@ -69,6 +69,10 @@ const routes: Routes = [
   {
     path: 'Publicacion/add',
     component: PublicacionComponent
+  },
+  {
+    path: 'Publicaciones',
+    component: AppListComponent
   }
 ];
 
