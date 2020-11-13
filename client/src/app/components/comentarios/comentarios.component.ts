@@ -30,12 +30,13 @@ export class ComentariosComponent implements OnInit {
   comentario: Comentario ={
     Mensaje: '',
     Publicacion_idPublicacion: null,
-    Usuario_Carnet: 201903838,
+    Usuario_Carnet: 0,
   }
 
   constructor(private activedRoute: ActivatedRoute, private appsService: AppsService) { }
 
   ngOnInit(): void {
+    this.comentario.Usuario_Carnet = Number(localStorage.getItem('carnetLogeado'));
     const params = this.activedRoute.snapshot.params;
     if(params.id){
       this.appsService.getPublicacion(params.id)

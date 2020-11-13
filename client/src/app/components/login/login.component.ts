@@ -2,7 +2,6 @@ import { Router } from '@angular/router';
 import { Usuario } from './../../models/usuario.model';
 import { Component, OnInit } from '@angular/core';
 import { AppsService } from 'src/app/services/apps.service';
-import * as jQuery from 'jquery';
 
 @Component({
   selector: 'app-login',

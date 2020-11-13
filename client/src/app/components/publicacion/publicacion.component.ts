@@ -18,7 +18,7 @@ export class PublicacionComponent implements OnInit {
 
   publicacion: Publicacion ={
     Mensaje: '',
-    Usuario_Carnet: 201902207,
+    Usuario_Carnet: 0,
     Curso_Catedratico_idCatedraticoCurso: 0,
     Curso_CodigoCurso: 0,
     Catedratico_NoCatedratico: 0,
@@ -28,6 +28,9 @@ export class PublicacionComponent implements OnInit {
   constructor(private appsService: AppsService, private route: Router) { }
 
   ngOnInit(): void {
+    this.publicacion.Usuario_Carnet = Number(localStorage.getItem('carnetLogeado'));
+    console.log(this.publicacion.Usuario_Carnet);
+
     this.appsService.getCodigoCurso().subscribe(
       res => {
         this.cursos = res;
@@ -67,7 +70,7 @@ export class PublicacionComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
-          this.route.navigate(['/Publicacion']);
+          this.route.navigate(['/Publicaciones']);
         },
         err => console.error(err)
       )   
