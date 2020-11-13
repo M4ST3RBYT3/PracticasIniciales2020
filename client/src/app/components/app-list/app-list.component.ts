@@ -10,13 +10,15 @@ import { AppsService } from '../../services/apps.service';
 })
 export class AppListComponent implements OnInit {
 
+
   publicaciones: any = []
   cantidad: any = []
 
   paramsfiltro: Publicacion ={
     Mensaje: '',
-    Tipo: 0 
+    Tipo: 0
   }
+
 
   constructor(private appsService: AppsService) { }
 

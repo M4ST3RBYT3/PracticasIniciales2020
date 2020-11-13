@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { AppListComponent } from './components/app-list/app-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 
 import {AppsService} from './services/apps.service';
+
 import { CursosComponent } from './components/cursos/cursos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
@@ -17,6 +18,8 @@ import { PublicacionComponent } from './components/publicacion/publicacion.compo
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
 import { PensumComponent } from './components/pensum/pensum.component';
 import { CursosAprobadosComponent } from './components/cursos-aprobados/cursos-aprobados.component';
+import { LoginComponent } from './components/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { CursosAprobadosComponent } from './components/cursos-aprobados/cursos-a
     PublicacionComponent,
     ComentariosComponent,
     PensumComponent,
-    CursosAprobadosComponent
+    CursosAprobadosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@ import { Publicacion } from '../models/Publicacion';
 import { Comentario } from '../models/Comentario';
 import { from, Observable } from 'rxjs';
 import { CursoAprobado } from '../models/CursoAprobado';
-
+import { Usuario } from '../models/usuario.model';
 
 
 @Injectable({
@@ -17,12 +17,21 @@ export class AppsService {
 
   constructor(private http: HttpClient) { }
 
+
   getUsuarios() {
     return this.http.get(this.API_URI + '/apps');
   }
 
-  getUsuario(id: string) {
+  getUsuario(id: any) {
     return this.http.get(this.API_URI + '/apps/' + id);
+  }
+  getUsuariosPB(){
+    return this.http.get(this.API_URI + '/apps');
+  }
+
+  getUsuarioPB(id: number){
+    return this.http.get('http://localhost:3000/api/apps/' + id);
+
   }
 
   deleteUsuario(id: string) {
@@ -36,13 +45,23 @@ export class AppsService {
   updateUsuario(Carnet: number, updatedUsuario: App): Observable<App> {
     return this.http.put(`${this.API_URI}/apps/${Carnet}`, updatedUsuario);
   }
+  saveUsuarioPB(usuario: Usuario){
+    return this.http.post('http://localhost:3000/api/apps', usuario);
+  }
+
+  updateUsuarioPB(id: number, updatedUsuario: Usuario): Observable<App>{
+    return this.http.put('http://localhost:3000/api/apps/' + id, updatedUsuario);
+
+  }
 
   //PUBLICACIONES
   getPublicacion(id: string) {
     return this.http.get(this.API_URI + '/Publicacion/' + id);
   }
 
+
   getPublicaciones() {
+
     return this.http.get(this.API_URI + '/Publicacion');
   }
 
@@ -112,7 +131,7 @@ export class AppsService {
   //CANTIDAD COMENTARIOS
   getCountComentaios(id: string){
     return this.http.get(this.API_URI + '/Publicacion/Comentario/' + id)
-  }  
+  }
 
 
 
