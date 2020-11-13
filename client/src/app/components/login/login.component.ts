@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit {
       this.credenciales.Carnet = Number(this.credenciales.Carnet)
       if (data.Carnet === this.credenciales.Carnet && data.contrasena === this.credenciales.Contrasena){
         console.log(data)
-        localStorage.setItem('carnetLogeado', this.credenciales.Carnet);
+        localStorage.setItem('carnetLogeado', data.Carnet);
+        localStorage.setItem('contraseñaLogeado', this.credenciales.Contrasena);
         this.route.navigate(['/Publicaciones']);
         console.log(localStorage);
       }

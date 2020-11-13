@@ -14,22 +14,23 @@ export class PerfilComponent implements OnInit {
   apps: any = [];
   listaCursosAprobados: any = [];
   listaCreditos:any=[];
+  
 
   curso:CursoAprobado = {
-    CarnetU:201904025,
+    CarnetU:Number(localStorage.getItem('carnetLogeado')),
     CursoP:0,
     NotaAprobada:0
   }  
 
   user:App = {
-    Carnet:201904025,
+    Carnet:Number(localStorage.getItem('carnetLogeado')),
     Nombres:"",
     Apellidos:"",
     contrasena:"",
     correo:""
   }
 
-  
+
 
   constructor(private appsService: AppsService, private activedRoute: ActivatedRoute) { }
 

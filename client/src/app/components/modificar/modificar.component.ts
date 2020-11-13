@@ -13,11 +13,12 @@ export class ModificarComponent implements OnInit {
 modi: any = [];
 
 app: App = {
-Carnet: 0,
+Carnet: Number(localStorage.getItem('carnetLogeado')),
 Nombres: '',
 Apellidos: '',
 correo: '',
-contrasena: 'anitabb'
+contrasena: String (localStorage.getItem('contraseñaLogeado'))
+//localStorage.getItem('carnetLogeado')
 }
 
   constructor(private activedRoute: ActivatedRoute, private appsService: AppsService, private router: Router) { }
